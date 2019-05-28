@@ -180,7 +180,7 @@ export function getAuthServiceConfigs() {
     DeviceDetectorModule.forRoot(),
     NgbPaginationModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBHeb0qFm7O491EywXGQFnhsCiqbOkagbU',
+      apiKey: 'apikey',
       libraries: ['places', 'geometry']})
   ],
   exports: [PhoneMaskDirective],
