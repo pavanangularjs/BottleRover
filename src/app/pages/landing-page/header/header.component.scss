@@ -1,0 +1,10 @@
+header{ padding: 10px 0;
+ .logo img{ width: 100%; height: auto; max-width: 80%; float: left; display: inline-block;
+    padding-top: 15px;}
+ .slogan{ float: left; padding-top:2.2%; font-weight: 900; color: #e91d24; text-transform: uppercase; font-size: 1.2em; font-family: poppinsbold!important;}
+ .login{ text-align: right; display:inline-block; padding-top: 20px; float: right;
+    a{ color: #e91d24; font-weight: 900; text-transform: uppercase; font-size: 1.2em; font-family: poppinsbold!important;}
+    a:hover{ text-decoration: none;}
+i{font-size:35px; color:#e91d24; margin-top: -7px; margin-left: 10px;}
+}
+}

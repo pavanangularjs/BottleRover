@@ -1,0 +1,6 @@
+<app-header *ngIf="isStore"></app-header>
+<router-outlet></router-outlet>
+<app-footer *ngIf="isStore"></app-footer>
+
+<app-agelimit></app-agelimit>
+<button id="openModal" #openModal [hidden]="true" data-toggle="modal" data-target="#myModal"></button>
