@@ -119,6 +119,8 @@ export class LandingPageSearchByAddressComponent implements OnInit {
     }
 
     this.commonService.storeList = this.matchedStoreList;
+    this.commonService.latitude = this.latitude;
+    this.commonService.longitude = this.longitude;
   }
 
 }

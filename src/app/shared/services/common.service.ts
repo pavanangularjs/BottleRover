@@ -9,6 +9,8 @@ export class CommonService {
   orderPlaced = new Subject<boolean>();
   locationChanged = new Subject<any>();
   storeList: any;
+  latitude: number;
+  longitude: number;
 
   constructor() { }
 

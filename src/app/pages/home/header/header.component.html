@@ -65,7 +65,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="dropdown text_small store-dropmenu" *ngIf="storeList?.length > 1" (click)="openMultiLocationDialog()">
+                    <li [routerLink]="['/store-locations']">
                         <div class="cart-block">
                             <div class="header_icon">
                                 <i class="icon icon-distance"></i>
@@ -186,7 +186,7 @@
                         </li>
                     </ul>
                 </li> -->
-                <li class="dropdown text_small store-dropmenu" *ngIf="storeList?.length > 1"  (click)="openMultiLocationDialog()">
+                <li [routerLink]="['/store-locations']" >
                     <div class="cart-block">
                         <div class="header_icon">
                             <i class="icon icon-distance"></i>

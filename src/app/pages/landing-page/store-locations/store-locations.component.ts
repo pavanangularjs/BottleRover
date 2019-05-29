@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
+import { MapsAPILoader } from '@agm/core';
 import { Store } from '@ngrx/store';
 import { ProductStoreService } from '../../../services/product-store.service';
 import { CustomerLoginSession } from '../../../models/customer-login-session';
@@ -8,6 +9,7 @@ import { CommonService } from '../../../shared/services/common.service';
 import { SessionService } from '../../../shared/services/session.service';
 import { Router } from '@angular/router';
 import { AppConfigService } from '../../../app-config.service';
+import { } from 'googlemaps';
 
 @Component({
   selector: 'app-landing-page-storelocations',
@@ -15,9 +17,8 @@ import { AppConfigService } from '../../../app-config.service';
   styleUrls: ['./store-locations.component.scss']
 })
 export class LandingPageStorelocationsComponent implements OnInit {
-  @ViewChild('gmap') gmapElement: any;
-  map: google.maps.Map;
-  iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+  @ViewChild('search')
+  public searchElementRef: ElementRef;
 
   latitude: number;
   longitude: number;
@@ -25,8 +26,11 @@ export class LandingPageStorelocationsComponent implements OnInit {
   storeList_25miles: any;
   storeList_50miles: any;
   matchedStoreList: any;
+  zoom: number;
 
-  constructor( private store: Store<CustomerLoginSession>,
+  constructor( private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone,
+    private store: Store<CustomerLoginSession>,
     private progressBarService: ProgressBarService,
     private storeService: ProductStoreService,
     private commonService: CommonService,
@@ -34,33 +38,53 @@ export class LandingPageStorelocationsComponent implements OnInit {
     private appConfig: AppConfigService,
     private sessionService: SessionService) {
 
-    /* this.store.select(CustomerSelectors.customerLoginSessionData)
+      this.latitude = 17.473589;
+      this.longitude = 78.38514459999999;
+
+     this.store.select(CustomerSelectors.customerLoginSessionData)
     .subscribe(clsd => {
       if (clsd) {
         this.getStoreList();
       }
     });
 
-    this.commonService.locationChanged.subscribe(data => {
-      this.latitude = data.lat;
-      this.longitude = data.long;
-
-      this.calculateDistance();
-    }); */
-
-    this.storeList = this.commonService.storeList;
+    this.matchedStoreList = this.commonService.storeList;
+    this.latitude = this.commonService.latitude;
+    this.longitude = this.commonService.longitude;
   }
 
   ngOnInit() {
-    const mapProp = {
-      center: new google.maps.LatLng(18.5793, 73.8143),
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
+
+    this.zoom = 12;
+    this.mapsAPILoader.load().then(() => {
+      // this.geoCoder = new google.maps.Geocoder;
+
+      const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+        types: ['address']
+      });
+      autocomplete.addListener('place_changed', () => {
+        this.ngZone.run(() => {
+          // get the place result
+          const place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+          // verify result
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
+
+          // set latitude, longitude and zoom
+          this.latitude = place.geometry.location.lat();
+          this.longitude = place.geometry.location.lng();
+
+          this.router.navigate(['/store-locations']);
+          // this.commonService.onLocationChanged({'lat': this.latitude, 'long': this.longitude});
+          this.calculateDistance();
+        });
+      });
+    });
   }
 
-  /* getStoreList() {
+  getStoreList() {
     this.progressBarService.show();
     this.storeService.storeGetList().subscribe(data => {
       if (data && data.ListStore) {
@@ -68,9 +92,9 @@ export class LandingPageStorelocationsComponent implements OnInit {
         this.progressBarService.hide();
       }
     });
-  } */
+  }
 
-  /* calculateDistance() {
+  calculateDistance() {
     const searchLocation = new google.maps.LatLng(this.latitude, this.longitude);
 
     this.storeList_25miles = [];
@@ -103,7 +127,11 @@ export class LandingPageStorelocationsComponent implements OnInit {
     } else if (this.storeList_50miles.length > 0) {
       this.matchedStoreList = this.storeList_50miles.sort((x, y) => x.miles < y.miles ? -1 : 1);
     }
-  } */
+
+    this.commonService.storeList = this.matchedStoreList;
+    this.commonService.latitude = this.latitude;
+    this.commonService.longitude = this.longitude;
+  }
 
   navToStore(storeInfo) {
     console.log(JSON.stringify(storeInfo));
