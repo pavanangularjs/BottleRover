@@ -1,7 +1,504 @@
 .text-center{ text-align: center;}
-.herotext{ color: #e91d24; font-size: 6em; text-align: center; font-weight: 800; text-transform: uppercase; line-height: 88px;}
-h4{ color: #e91d24; text-align: center; font-size: 1.8em; font-weight: 800; text-transform: uppercase; margin-bottom: 30px;}
-h4.text-right{ margin-right: 7%;}
+.herotext{ color: #e91d24; font-family: 'CubanoRegular'; font-size: 7.5em; text-align: center; font-weight: normal !important; text-transform: uppercase; line-height: 88px;}
+h4{ color: #e91d24; text-align: center; font-family: 'CubanoRegular'; font-size: 2em; font-weight: normal; text-transform: uppercase; margin-bottom: 30px;}
+h4.text-right{ margin-right: 9%; font-family: 'CubanoRegular'; font-size: 3em; text-align: right; width: 100%; float:right;}
 .margin40{ margin: 40px 0;}
-.btn-default{background: #64676d; color: #fff; text-transform: uppercase; font-weight: 800; font-size: 2em; margin-top: 30px; padding: 10px 20px;}
+.btn-default{background: #64676d; font-family: 'CubanoRegular';  color: #fff; text-transform: uppercase; font-weight:normal; font-size: 2em; margin-top: 30px; padding: 10px 20px;}
 .btn-default:hover{ opacity: 0.8;}
+
+
+/* iPhone X in portrait & landscape */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* iPhone X in landscape */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px) 
+and (-webkit-device-pixel-ratio : 3)
+and (orientation : landscape) {
+ 
+}   
+
+/* iPhone X in portrait */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px) 
+and (-webkit-device-pixel-ratio : 3)
+and (orientation : portrait) {
+    
+}
+
+/* iPhone 6, 7, & 8 in portrait & landscape */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* iPhone 6, 7, & 8 in landscape */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : landscape) {
+  
+}
+
+/* iPhone 6, 7, & 8 in portrait */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : portrait) {
+  
+}
+
+/* iPhone 6, 7, & 8 Plus in portrait & landscape */
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* iPhone 6, 7, & 8 Plus in landscape */
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) 
+and (orientation : landscape) {
+ 
+}
+
+/* iPhone 6, 7, & 8 Plus in portrait */
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) 
+and (orientation : portrait) {
+  
+}
+
+/* iPhone 6 in portrait & landscape */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* iPhone 6 in landscape */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : landscape) {
+ 
+}
+
+/* iPhone 6 in portrait */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : portrait) {
+  
+}
+
+/* iPhone 6 Plus in portrait & landscape */
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) {
+  .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* iPhone 6 Plus in landscape */
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) 
+and (orientation : landscape) {
+ 
+}
+
+/* iPhone 6 Plus in portrait */
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) 
+and (orientation : portrait) {
+ 
+}
+
+/* iPhone 5 & 5S in portrait & landscape */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* iPhone 5 & 5S in landscape */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : landscape) {
+
+}
+
+/* iPhone 5 & 5S in portrait */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : portrait) {
+ 
+}
+
+/* 
+  iPhone 2G, 3G, 4, 4S Media Queries
+  It's noteworthy that these media queries are also the same for iPod Touch generations 1-4.
+*/
+
+/* iPhone 2G-4S in portrait & landscape */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* iPhone 2G-4S in landscape */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) 
+and (orientation : landscape) {
+  
+}
+
+/* iPhone 2G-4S in portrait */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) 
+and (orientation : portrait) {
+ 
+}
+
+/* iPad in portrait & landscape */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  {
+ 
+}
+
+/* iPad in landscape */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+ 
+}
+
+/* iPad in portrait */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+
+}
+
+/* Galaxy S3 portrait and landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* Galaxy S3 portrait */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) 
+  and (orientation: portrait) {
+    
+}
+
+/* Galaxy S3 landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) 
+  and (orientation: landscape) {
+
+}
+
+/* Galaxy S4 portrait and landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* Galaxy S4 portrait */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+   
+}
+
+/* Galaxy S4 landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: landscape) {
+  
+}
+
+/* Galaxy S5 portrait and landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* Galaxy S5 portrait */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+    
+}
+
+/* Galaxy S5 landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: landscape) {
+   
+}
+
+/* HTC One portrait and landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* HTC One portrait */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+   
+}
+
+/* HTC One landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: landscape) {
+  
+}
+
+/*
+  iPad 3 & 4 Media Queries
+  If you're looking to target only 3rd and 4th generation Retina iPads 
+  (or tablets with similar resolution) to add @2x graphics,
+  or other features for the tablet's Retina display, use the following media queries.
+*/
+
+/* Retina iPad in portrait & landscape */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* Retina iPad in landscape */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 2) {
+  
+}
+
+/* Retina iPad in portrait */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 2) {
+  
+}
+
+/*
+  iPad 1 & 2 Media Queries
+  If you're looking to supply different graphics or choose different typography 
+  for the lower resolution iPad display, the media queries below will work 
+  like a charm in your responsive design!
+*/
+
+/* iPad 1 & 2 in portrait & landscape */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (-webkit-min-device-pixel-ratio: 1) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* iPad 1 & 2 in landscape */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 1) {
+  
+}
+
+/* iPad 1 & 2 in portrait */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) 
+and (-webkit-min-device-pixel-ratio: 1) {
+ 
+}
+
+/* iPad mini in portrait & landscape */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 1) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* iPad mini in landscape */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 1) {
+  
+}
+
+/* iPad mini in portrait */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+/* Galaxy Tab 10.1 portrait and landscape */
+@media
+  (min-device-width: 800px) 
+  and (max-device-width: 1280px) {
+    .herotext{font-size:4em; line-height: 76px;}
+    h4.text-right{ font-size: 2em;}
+    .btn-default{font-size:1.3em;}
+}
+
+/* Galaxy Tab 10.1 portrait */
+@media 
+  (max-device-width: 800px) 
+  and (orientation: portrait) { 
+    
+}
+
+/* Galaxy Tab 10.1 landscape */
+@media 
+  (max-device-width: 1280px) 
+  and (orientation: landscape) { 
+   
+}
+
+/* Asus Nexus 7 portrait and landscape */
+@media screen 
+  and (device-width: 601px) 
+  and (device-height: 906px) 
+  and (-webkit-min-device-pixel-ratio: 1.331) 
+  and (-webkit-max-device-pixel-ratio: 1.332) {
+    .herotext{font-size:7.4em; line-height: 88px;}
+    h4.text-right{ font-size: 2.3em;}
+    .btn-default{font-size:2em;} 
+}
+
+/* Asus Nexus 7 portrait */
+@media screen 
+  and (device-width: 601px) 
+  and (device-height: 906px) 
+  and (-webkit-min-device-pixel-ratio: 1.331) 
+  and (-webkit-max-device-pixel-ratio: 1.332) 
+  and (orientation: portrait) {
+    .herotext{font-size:7.4em; line-height: 88px;}
+    h4.text-right{ font-size: 2.3em;}
+    .btn-default{font-size:2em;} 
+}
+
+/* Asus Nexus 7 landscape */
+@media screen 
+  and (device-width: 601px) 
+  and (device-height: 906px) 
+  and (-webkit-min-device-pixel-ratio: 1.331) 
+  and (-webkit-max-device-pixel-ratio: 1.332) 
+  and (orientation: landscape) {
+    .herotext{font-size:7.4em; line-height: 88px;}
+    h4.text-right{ font-size: 2.3em;}
+    .btn-default{font-size:2em;} 
+}
+
+
+/* Laptops non-retina screens */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .herotext{font-size:7.4em; line-height: 88px;}
+    h4.text-right{ font-size: 2.3em;}
+    .btn-default{font-size:2em;} 
+}
+
+/* Laptops retina screens */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+    .herotext{font-size:7.4em; line-height: 88px;}
+    h4.text-right{ font-size: 2.3em;}
+    .btn-default{font-size:2em;} 
+}

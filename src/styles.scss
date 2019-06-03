@@ -3,10 +3,13 @@
 @import "~bootstrap3/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
 
-@import "assets/fontello-css/fontello-codes.css";
+@import "assets/fontello-css/cubano-regular-webfont.css";
 @import "assets/fontello-css/fontello-embedded.css";
 @import "assets/fontello-css/fontello.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@font-face { font-family: "Calafia-Regular";
+    src: url("assets/fonts/Calafia-Regular.otf");}
 
 body {
     margin-top: 60px;
