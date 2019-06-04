@@ -1,19 +1,21 @@
 .search-icon {
     position: absolute;
-    top: 3.5%;
+    
     left: 25px;
-    margin-top: -10px;
+    margin-top: 6px;
 }
+.search-icon::before{top: 55% !important;}
+.search-icon::after{top: 1.5% !important;}
 .form-control{
      padding: 15px 32px;
 }
-.filter img{ width: 100%; height: auto; max-width: 17%; opacity: 0.3;}
+.filter img{ width: 100%; height: auto; max-width: 17%; opacity: 0.3; margin-left: 10px;}
 .icon1 img{ width:100%; height: auto; max-width: 52%;}
 .icon2 img{ width:100%; height: auto; max-width: 82%;}
 .icon3 img{ width:100%; height: auto; max-width: 42%;}
 .logo-store img{ width: 100%; height: auto; max-width: 78%; border: solid 1px #ccc; padding: 3px; border-radius:50%;}
 .mtop15{ margin-top: 15px;}
-.store{ border-bottom: solid 1px rgb(231, 231, 231); padding: 15px; float: left;}
+.store{ border-bottom: solid 1px rgb(231, 231, 231); padding: 15px; float: left; min-height: 142px; overflow: hidden; white-space: nowrap; display: inline-table;}
 .store:hover{box-shadow:1px 4px 8px 2px #888888;}
 .store table{ float: left;}
 .store p{ color: rgb(39, 39, 39);}
