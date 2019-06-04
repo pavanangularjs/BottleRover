@@ -14,14 +14,14 @@
           <td class="filter"><img src="../../../assets/landing-page-images/icon-filter.png"> Filter</td>
         </tr>
       </table>
-      <div class="mtop15 border-bottom" *ngFor="let storeInfo of matchedStoreList">
+      <div class="mtop15 border-bottom" *ngFor="let storeInfo of matchedStoreList" title="Select Store">
           <div class="col-md-12">
             <a class="store" (click)="navToStore(storeInfo)">
               <table width="80%">
                 <tr>
                   <td class="logo-store" width="20%" valign="top"><img [src]="storeInfo?.store?.StoreImage"></td>
                   <td width="60%" valign="top">
-                    <p><strong>{{storeInfo?.store?.StoreName}}</strong><br>{{storeInfo?.store?.Address1}}<br><a (click)="navToStore(storeInfo)">Open Now</a></p>
+                    <p><strong>{{storeInfo?.store?.StoreName}}</strong><br>{{storeInfo?.store?.Address1}}<br></p>
                   </td>
                   <td width="" valign="top">
                     <p>{{storeInfo?.miles | number:'1.1-2'}} Miles</p>
@@ -31,9 +31,9 @@
 
               <table width="20%">
                 <tr>
-                  <td class="icon1" width="30%"><img src="../../../assets/landing-page-images/icon-store.png"></td>
-                  <td class="icon2" width="30%"><img src="../../../assets/landing-page-images/icon-shipping.png"></td>
-                  <td class="icon3" width="30%"><img src="../../../assets/landing-page-images/icon-mobilepay.png"></td>
+                  <td class="icon1" width="30%"><img src="../../../assets/landing-page-images/icon-store.png" *ngIf="storeInfo?.store?.IsPickUpEnable" title="Pick Up"></td>
+                  <td class="icon2" width="30%"><img src="../../../assets/landing-page-images/icon-shipping.png" *ngIf="storeInfo?.store?.IsDeliveryEnable" title="Delivery"></td>
+                  <td class="icon3" width="30%"><img src="../../../assets/landing-page-images/icon-mobilepay.png" *ngIf="storeInfo?.store?.IsOnlinePayment" title="Online Payment"></td>
                 </tr>
               </table>
             </a>
