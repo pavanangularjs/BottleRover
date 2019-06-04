@@ -41,8 +41,10 @@
       </div>
     </div>
     <div class="col-md-6">
-      <agm-map [latitude]="latitude" [longitude]="longitude">
-        <agm-marker *ngFor="let storeInfo of matchedStoreList" [latitude]="storeInfo?.store.Latitude" [longitude]="storeInfo?.store.Longitude"></agm-marker>
+      <agm-map [zoom]="10" [latitude]="latitude" [longitude]="longitude">
+        <agm-marker  [iconUrl]="'../../../assets/landing-page-images/map-marker.png'" [latitude]="latitude" [longitude]="longitude" > </agm-marker>
+        <agm-marker *ngFor="let storeInfo of matchedStoreList" [latitude]="storeInfo?.store.Latitude" [longitude]="storeInfo?.store.Longitude" 
+        [label]="{text: storeInfo?.store.StoreName, color: '#000', fontWeight: 'bold'}"></agm-marker>
       </agm-map>
 
     </div>
