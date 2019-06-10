@@ -27,6 +27,13 @@ export class LandingPageStorelocationsComponent implements OnInit {
   storeList_50miles: any;
   matchedStoreList: any;
   zoom: number;
+  icon = {
+    url: '../../../assets/landing-page-images/map-marker.png',
+    scaledSize: {
+      width: 60,
+      height: 60
+    }
+  };
 
   constructor( private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,

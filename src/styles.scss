@@ -2096,3 +2096,4 @@ a img.second_img {
 .pac-container {
     z-index: 99999 !important;
 }
+.pac-container.pac-logo.hdpi::after{ display: none;}
