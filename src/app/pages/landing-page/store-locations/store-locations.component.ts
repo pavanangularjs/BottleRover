@@ -62,7 +62,7 @@ export class LandingPageStorelocationsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.zoom = 12;
+    this.zoom = 8;
     this.mapsAPILoader.load().then(() => {
       // this.geoCoder = new google.maps.Geocoder;
 
