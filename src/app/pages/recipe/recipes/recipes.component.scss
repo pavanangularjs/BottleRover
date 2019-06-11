@@ -62,10 +62,10 @@
 }
 
 .thumbnail a img{
-    max-width: 352px;
+    max-width: 90%;
     display: block;
     margin: auto;
-    height: 220px;
+    height: auto;
     width: 100%;
 }
 
@@ -85,10 +85,10 @@ text-decoration: none;
         width: 100%;
     }
     .thumbnail a img {
-        max-width: 420px;
+        max-width: 90%;
         display: block;
         margin: auto;
-        height: 300px;
+        height: auto;
         width: 100%;
     }
 }
