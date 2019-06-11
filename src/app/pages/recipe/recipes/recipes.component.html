@@ -19,8 +19,7 @@
         </div>
 
         <div class="recipes col-lg-3 col-md-3 col-sm-3 col-xs-12 item_img animated fadeInLeft" *ngFor="let recipe of recipeList?.ListRecipe">
-          <div class="row">
-            <div class="thumbnail">
+           <div class="thumbnail">
               <a (click)="onRecipeSelection(recipe)">
                 <img src='{{recipe?.ThumbNailImage}}' />
                 <div class="caption">
@@ -28,7 +27,6 @@
                 </div>
               </a>
             </div>
-          </div>
         </div>
 
         <div class="row">

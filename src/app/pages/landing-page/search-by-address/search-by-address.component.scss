@@ -42,7 +42,7 @@ and (min-device-width : 375px)
 and (max-device-width : 812px) 
 and (-webkit-device-pixel-ratio : 3)
 and (orientation : portrait) {
-  
+  .control-section{ top:43% !important;}
 }
 
 /* iPhone 2 XL in Portrait */
@@ -86,7 +86,7 @@ and (max-device-width : 667px) {
 and (min-device-width : 375px) 
 and (max-device-width : 667px) 
 and (orientation : landscape) {
-
+  .control-section{top:112% !important;}
 }
 
 /* iPhone 6, 7, & 8 in portrait */
@@ -132,7 +132,7 @@ and (max-device-width : 667px) {
 and (min-device-width : 375px) 
 and (max-device-width : 667px) 
 and (orientation : landscape) {
-
+  .control-section{ top:117% !important;}
 }
 
 /* iPhone 6 in portrait */
@@ -157,7 +157,7 @@ and (min-device-width : 414px)
 and (max-device-width : 736px) 
 and (orientation : landscape) {
 h4{ width: 38% !important;}
-.control-section{ top:144% !important;}
+.control-section{ top:130% !important;}
 
 }
 
@@ -167,13 +167,14 @@ and (min-device-width : 414px)
 and (max-device-width : 736px) 
 and (orientation : portrait) {
   h4{ width:37% !important;}
+
 }
 
 /* iPhone 5 & 5S in portrait & landscape */
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 568px) {
-
+  .control-section{left:4%; width:92%;}
 }
 
 /* iPhone 5 & 5S in landscape */
@@ -182,6 +183,7 @@ and (min-device-width : 320px)
 and (max-device-width : 568px) 
 and (orientation : landscape) {
 h4{ width:43% !important}
+
 }
 
 /* iPhone 5 & 5S in portrait */
@@ -311,7 +313,7 @@ and (orientation : portrait) {
   and (device-height: 640px) 
   and (-webkit-device-pixel-ratio: 3) 
   and (orientation: portrait) {
-
+    //.control-section{ top:48% !important; left:5% !important;}
 }
 
 /* Galaxy S5 landscape */
@@ -339,7 +341,7 @@ and (orientation : portrait) {
   and (device-height: 640px) 
   and (-webkit-device-pixel-ratio: 3) 
   and (orientation: portrait) {
-    .control-section{top:60% !important;}
+   // .control-section{top:60% !important;}
 }
 
 /* HTC One landscape */
@@ -348,7 +350,7 @@ and (orientation : portrait) {
   and (device-height: 640px) 
   and (-webkit-device-pixel-ratio: 3) 
   and (orientation: landscape) {
-    .control-section{top:48% !important;}
+    .control-section{top:43% !important;}
 }
 
 /*
@@ -517,11 +519,18 @@ and (-webkit-min-device-pixel-ratio: 1) {
   only screen and (        min-device-pixel-ratio: 3.5),
   only screen and (                min-resolution: 538dpi),
   only screen and (                min-resolution: 3.5dppx) { 
-  .control-section{top:150% !important; left:9%;}
+  .control-section{top:130% !important; left:9%;}
   h4{font-size: 1.5em; width: 38% !important;}
  }
+/*iphonex landscape */
+@media only screen and (device-width : 812px) and (device-height: 375px) { 
+    /* Retina styles here */
+    .control-section{top:137% !important; left:7%;}
+}
+                                
+
  @media only screen and (min-width: 411px) and (orientation: portrait) {
-  .control-section{top:53% !important; left:9%;}
+  .control-section{top:45% !important; left:0%;}
   h4{font-size: 1.5em; width: 70% !important;
     }
    }

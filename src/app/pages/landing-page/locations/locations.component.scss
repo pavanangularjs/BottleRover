@@ -102,6 +102,7 @@ and (orientation : landscape) {
     span{ font-size: 0.25em !important; margin-right: 14% !important;}
     }
     .header, .banner{ height: 450px !important;}
+    .loc-city h4{ font-size: 2em !important; top:37%;}
 }
 
 /* iPhone 6 in portrait */
@@ -152,7 +153,7 @@ and (max-device-width : 568px) {
 and (min-device-width : 320px) 
 and (max-device-width : 568px) 
 and (orientation : landscape) {
-
+  .loc-city h4{ font-size: 1.65em !important; top:37%;}
 }
 
 /* iPhone 5 & 5S in portrait */
@@ -161,6 +162,7 @@ and (min-device-width : 320px)
 and (max-device-width : 568px) 
 and (orientation : portrait) {
   .hero-text{ font-size:4em !important; }
+  .loc-city h4{ font-size: 0.83em !important; top:35%;}
 }
 
 /* 
@@ -310,7 +312,7 @@ and (orientation : portrait) {
   and (device-height: 640px) 
   and (-webkit-device-pixel-ratio: 3) 
   and (orientation: portrait) {
-    .loc-city h4{ font-size: 0.93em; top: 37%;}
+    .loc-city h4{ font-size: 0.93em !important; top: 37%;}
 }
 
 /* HTC One landscape */
@@ -481,6 +483,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
   and (min-resolution: 192dpi) {
     
 }
+/*Pixel2*/
 @media
   only screen and (-webkit-min-device-pixel-ratio: 3.5),
   only screen and (   min--moz-device-pixel-ratio: 3.5),
@@ -488,14 +491,11 @@ and (-webkit-min-device-pixel-ratio: 1) {
   only screen and (        min-device-pixel-ratio: 3.5),
   only screen and (                min-resolution: 538dpi),
   only screen and (                min-resolution: 3.5dppx) { 
-  .header, .banner{ height: 450px !important;}
-  .hero-text{ font-size:8em !important; 
-    span{ font-size: 0.25em; margin-right: 25%;}
-    }
+    .loc-city h4{ font-size: 1.15em !important; top:37%;}
  }  
 
  @media only screen and (min-width: 411px) and (orientation: portrait) {
-  .hero-text{ font-size:5.5em !important; 
-    span{ font-size: 0.25em; margin-right: 25%;}
-    }
+  .loc-city h4{ font-size: 1.15em !important; top:37%;}
+  .hero-text{ font-size: 3.5em; line-height: 64px;}
+  h4.text-right{ font-size:1.5em;}
    }
