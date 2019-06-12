@@ -32,7 +32,9 @@ export class ContactUsComponent implements OnInit {
     this.store.select(CustomerSelectors.customerLoginSessionData)
       .subscribe(clsd => {
         if (clsd) {
-          this.getStoreDetails();
+          if (clsd.StoreId !== 0) {
+            this.getStoreDetails();
+          }
         }
       });
   }

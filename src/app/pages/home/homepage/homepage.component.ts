@@ -48,7 +48,7 @@ export class HomepageComponent implements OnInit {
             this.eventsList = pssd.EventList;
           }
 
-          this.titleService.setTitle(this.storeGetHomeData.StoreName);
+          // this.titleService.setTitle(this.storeGetHomeData.StoreName);
           this.updateCartId();
           if (this.returnUrl && this.returnUrl !== '/' && this.returnUrl !== '/home') {
             if (this.returnUrl !== '/checkout') {

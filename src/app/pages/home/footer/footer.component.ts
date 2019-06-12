@@ -27,7 +27,7 @@ export class FooterComponent implements OnInit {
 
     this.store.select(CustomerSelectors.customerLoginSessionData)
       .subscribe(clsd => {
-        if (clsd) {
+        if (clsd && clsd.StoreId !== 0) {
           this.getStoreDetails();
         }
       });

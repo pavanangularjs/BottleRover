@@ -54,7 +54,9 @@ export class HeaderComponent implements OnInit {
           } else {
             this.isActive = false;
           }
-          this.getStoreDetails();
+          if (this.customerSession.StoreId !== 0) {
+            this.getStoreDetails();
+          }
         }
       });
     this.store.select(ProductStoreSelectors.productStoreStateData)

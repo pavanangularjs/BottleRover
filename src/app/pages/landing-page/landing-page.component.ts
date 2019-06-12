@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { CustomerLoginSession } from '../../models/customer-login-session';
 import { CustomerLogin } from '../../state/customer/customer.action';
+import { CustomerSelectors } from '../../state/customer/customer.selector';
 import { ProgressBarService } from '../../shared/services/progress-bar.service';
 import * as CryptoJS from 'crypto-js';
 import { baseUrl } from '../../services/url-provider';
@@ -24,6 +25,11 @@ export class LandingPageComponent implements OnInit {
     private store: Store<CustomerLoginSession>,
     private progressBarService: ProgressBarService,
     private appConfig: AppConfigService) {
+      this.store.select(CustomerSelectors.customerLoginSessionData)
+      .subscribe(clsd => {
+        this.customerSession = clsd;
+        this.progressBarService.hide();
+      });
 
   }
 
