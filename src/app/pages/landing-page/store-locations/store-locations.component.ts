@@ -26,6 +26,7 @@ export class LandingPageStorelocationsComponent implements OnInit {
   storeList_25miles: any;
   storeList_50miles: any;
   matchedStoreList: any;
+  searchText: string;
   zoom: number;
   icon = {
     url: '../../../assets/landing-page-images/map-marker.png',
@@ -58,6 +59,7 @@ export class LandingPageStorelocationsComponent implements OnInit {
     this.matchedStoreList = this.commonService.storeList;
     this.latitude = this.commonService.latitude;
     this.longitude = this.commonService.longitude;
+    this.searchText = this.commonService.searchText;
   }
 
   ngOnInit() {
@@ -67,7 +69,7 @@ export class LandingPageStorelocationsComponent implements OnInit {
       // this.geoCoder = new google.maps.Geocoder;
 
       const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        types: ['address']
+        types: []
       });
       autocomplete.addListener('place_changed', () => {
         this.ngZone.run(() => {

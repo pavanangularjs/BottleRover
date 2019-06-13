@@ -25,7 +25,8 @@ export class LandingPageSearchByAddressComponent implements OnInit {
   storeList_25miles: any;
   storeList_50miles: any;
   matchedStoreList: any;
- 
+  searchText: string;
+
   @ViewChild('search')
   public searchElementRef: ElementRef;
 
@@ -36,26 +37,31 @@ export class LandingPageSearchByAddressComponent implements OnInit {
     private storeService: ProductStoreService,
     private commonService: CommonService,
     private router: Router) {
-     this.store.select(CustomerSelectors.customerLoginSessionData)
+    this.store.select(CustomerSelectors.customerLoginSessionData)
       .subscribe(clsd => {
         if (clsd) {
           this.getStoreList();
         }
       });
+    this.commonService.stateSelected.subscribe(state => {
+      this.searchText = state;
+    });
   }
 
   ngOnInit() {
+    // this.searchText = 'Dallas TX, USA';
     // load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
       // this.geoCoder = new google.maps.Geocoder;
 
       const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        types: ['address']
+        types: []
       });
       autocomplete.addListener('place_changed', () => {
         this.ngZone.run(() => {
           // get the place result
           const place: google.maps.places.PlaceResult = autocomplete.getPlace();
+          this.commonService.searchText = place.formatted_address;
 
           // verify result
           if (place.geometry === undefined || place.geometry === null) {
@@ -98,9 +104,9 @@ export class LandingPageSearchByAddressComponent implements OnInit {
         distance = distance / 1609.344;
 
         if (distance <= 25) {
-          this.storeList_25miles.push({'miles' : distance, 'store': item});
+          this.storeList_25miles.push({ 'miles': distance, 'store': item });
         } else if (distance <= 50) {
-          this.storeList_50miles.push({'miles' : distance, 'store': item});
+          this.storeList_50miles.push({ 'miles': distance, 'store': item });
         }
       }
     });

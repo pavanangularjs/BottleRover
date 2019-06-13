@@ -8,9 +8,11 @@ export class CommonService {
   cacheUpdated = new Subject<any>();
   orderPlaced = new Subject<boolean>();
   locationChanged = new Subject<any>();
+  stateSelected = new Subject<any>();
   storeList: any;
   latitude: number;
   longitude: number;
+  searchText: string;
 
   constructor() { }
 
@@ -24,5 +26,9 @@ export class CommonService {
 
   onLocationChanged(location: any) {
     this.locationChanged.next(location);
+  }
+
+  onStateSeleced(state: any) {
+    this.stateSelected.next(state);
   }
 }
