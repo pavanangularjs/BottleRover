@@ -152,4 +152,20 @@ export class LandingPageStorelocationsComponent implements OnInit {
     this.router.navigate(['/store']);
   }
 
+  onMouseOver(infoWindow, gm) {
+    console.log(infoWindow);
+    if (gm.lastOpen != null) {
+      gm.lastOpen.close();
+    }
+    gm.lastOpen = infoWindow;
+    infoWindow.open();
+    setTimeout(() => {
+      const x = document.getElementsByClassName('gm-ui-hover-effect')[0].remove();
+    }, 10);
+  }
+  onMouseOut(infoWindow, gm) {
+    gm.lastOpen = infoWindow;
+    infoWindow.close();
+  }
+
 }

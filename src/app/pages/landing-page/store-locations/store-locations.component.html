@@ -66,8 +66,11 @@
         [longitude]="longitude"> </agm-marker>
       <agm-marker *ngFor="let storeInfo of matchedStoreList" [latitude]="storeInfo?.store.Latitude"
         [longitude]="storeInfo?.store.Longitude"
-        [label]="{text: storeInfo?.store.StoreName.substr(0,1), color: '#000', fontWeight: 'bold', fontSize: '15'}">
-        <agm-info-window>
+        [label]="{text: storeInfo?.store.StoreName.substr(0,1), color: '#000', fontWeight: 'bold', fontSize: '15'}"
+        (mouseOver)="onMouseOver(infoWindow, $event)" 
+        (mouseOut)="onMouseOut(infoWindow, $event)"
+        >
+        <agm-info-window [disableAutoPan]="false" #infoWindow>
           <p><strong>{{storeInfo?.store?.StoreName}}</strong><br>{{storeInfo?.store?.Address1}} <span *ngIf="storeInfo?.store?.Address2">, {{storeInfo?.store?.Address2}}</span> <br>
             <span> {{storeInfo?.store?.City}}, {{storeInfo?.store?.State}} {{storeInfo?.store?.Zip}} </span>
           </p>
