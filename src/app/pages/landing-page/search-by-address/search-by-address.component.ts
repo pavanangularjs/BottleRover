@@ -43,9 +43,6 @@ export class LandingPageSearchByAddressComponent implements OnInit {
           this.getStoreList();
         }
       });
-    this.commonService.stateSelected.subscribe(state => {
-      this.searchText = state;
-    });
   }
 
   ngOnInit() {
@@ -69,12 +66,10 @@ export class LandingPageSearchByAddressComponent implements OnInit {
           }
 
           // set latitude, longitude and zoom
-          this.latitude = place.geometry.location.lat();
-          this.longitude = place.geometry.location.lng();
+          this.commonService.latitude = place.geometry.location.lat();
+          this.commonService.longitude = place.geometry.location.lng();
 
-          this.router.navigate(['/store-locations']);
-          // this.commonService.onLocationChanged({'lat': this.latitude, 'long': this.longitude});
-          this.calculateDistance();
+          this.commonService.calculateDistance();
         });
       });
     });
@@ -85,48 +80,9 @@ export class LandingPageSearchByAddressComponent implements OnInit {
     this.storeService.storeGetList().subscribe(data => {
       if (data && data.ListStore) {
         this.storeList = data.ListStore;
+        this.commonService.allStoresList = data.ListStore;
         this.progressBarService.hide();
       }
     });
   }
-
-  calculateDistance() {
-    const searchLocation = new google.maps.LatLng(this.latitude, this.longitude);
-
-    this.storeList_25miles = [];
-    this.storeList_50miles = [];
-
-    this.storeList.forEach(item => {
-      const store = new google.maps.LatLng(item.Latitude, item.Longitude);
-      let distance = google.maps.geometry.spherical.computeDistanceBetween(store, searchLocation);
-
-      if (distance) {
-        distance = distance / 1609.344;
-
-        if (distance <= 25) {
-          this.storeList_25miles.push({ 'miles': distance, 'store': item });
-        } else if (distance <= 50) {
-          this.storeList_50miles.push({ 'miles': distance, 'store': item });
-        }
-      }
-    });
-
-    console.log('25 miles List');
-    console.log(this.storeList_25miles);
-    console.log('50 miles List');
-    console.log(this.storeList_50miles);
-
-    this.matchedStoreList = [];
-
-    if (this.storeList_25miles.length > 0) {
-      this.matchedStoreList = this.storeList_25miles.sort((x, y) => x.miles < y.miles ? -1 : 1);
-    } else if (this.storeList_50miles.length > 0) {
-      this.matchedStoreList = this.storeList_50miles.sort((x, y) => x.miles < y.miles ? -1 : 1);
-    }
-
-    this.commonService.storeList = this.matchedStoreList;
-    this.commonService.latitude = this.latitude;
-    this.commonService.longitude = this.longitude;
-  }
-
 }

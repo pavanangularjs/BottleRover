@@ -16,7 +16,7 @@
 .filter img{ width: 100%; height: auto; max-width: 17%; opacity: 0.3; margin-left: 10px;}
 .icon1 img{ width:100%; height: auto; max-width: 52%;}
 .icon2 img{ width:100%; height: auto; max-width: 70%;}
-.icon3 img{ width:100%; height: auto; max-width: 34%;}
+.icon3 img{ width:100%; height: auto; max-width: 41%;}
 .text-center{ text-align: center;}
 .logo-store img{ width: 100%; height: auto; max-width: 50%; 
     //border: solid 1px #ccc; 
@@ -33,7 +33,7 @@ agm-map {
     height: 500px;
   }
 .v-align{vertical-align: top;}
-
+table tr td{ padding: 2px;}
   
 /* iPhone X in portrait & landscape */
 @media only screen 
@@ -209,7 +209,7 @@ h4{ width:43% !important}
 .store{ padding: 0;}
 .logo-store img{ max-width: 90%;}
 .icon1 img{ max-width: 80%;}
-.icon2 img{ max-width: 100%;}
+.icon2 img{ max-width: 88%;}
 .icon3 img{ max-width: 60%;}
 }
 
@@ -289,7 +289,7 @@ and (orientation : portrait) {
   .store{ padding: 0;}
   .logo-store img{ max-width: 60%;}
   .icon1 img{ max-width: 50% !important;}
-  .icon2 img{ max-width: 80% !important;}
+  .icon2 img{ max-width: 74% !important;}
   .icon3 img{ max-width: 40% !important;}
 }
 
@@ -382,9 +382,9 @@ and (orientation : portrait) {
   .search-icon{ margin-top:10px !important;}
   .store{ min-height: 80px; padding: 0px;}
   .col-md-6 > agm-map{ margin-top: 15px; display: block;}
-  .icon1 img{max-width: 80%;}
+  .icon1 img{max-width: 100%;}
 .icon2 img{max-width: 100%;}
-.icon3 img{max-width: 62%;}
+.icon3 img{max-width: 77%;}
 }
 
 /* HTC One portrait */
@@ -428,9 +428,9 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px) 
 and (orientation : landscape)
 and (-webkit-min-device-pixel-ratio: 2) {
-.icon1 img{ max-width: 70%;}
-.icon2 img{ max-width: 100%;}
-.icon3 img{ max-width: 59%;}
+.icon1 img{ max-width: 56%;}
+.icon2 img{ max-width: 70%;}
+.icon3 img{ max-width: 44%;}
 }
 
 /* Retina iPad in portrait */

@@ -231,7 +231,7 @@ table tr td .img_div{
     min-height: 60%;
     text-align: center;
     border-radius: 10px 10px 0 0;
-    height: 60%;
+    //height: 60%;
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
     padding-top: 5px;
@@ -370,7 +370,11 @@ nav .navbar-nav ul li a{
     nav .navbar-nav ul li a{
         padding: 10px 10px;
     }
-
+    .second_content h4,.second_content h5{
+        white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    }
 }
 
 /* @media only screen and (min-width: 320px) and (max-width: 568px) {
@@ -1099,12 +1103,16 @@ ul.navbar-nav li a:hover {
         margin-bottom: 15px !important;
     }
     .second_content h4, .second_content h5{
-        white-space: nowrap;
+        //white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
         font-size: 0.8em !important;
     }
     .Main_bottlesection{ margin-bottom: 15px !important; display: flow-root;}
+    .producttitle{
+        height: 33px;
+        overflow: hidden;
+    }
 }
 
  #menu,.default {

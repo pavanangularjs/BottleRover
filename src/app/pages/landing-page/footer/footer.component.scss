@@ -1,8 +1,31 @@
 .banner{ 
-    background: url(../../../../assets/landing-page-images/bg-sodr.png) repeat-x left top #e91d24; padding: 150px 0 30px 0; color:#fff; text-align: center;
+    background: url(../../../../assets/landing-page-images/bg-sodr.png) repeat-x left top #e91d24; padding: 90px 0 30px 0; color:#fff; text-align: center;
+    top: -28px;
+    background-size: contain;
     } 
-.text-center{ text-align: center; color: #fff;}   
-.footer-logo img{width: 100%; height: auto; max-width: 90%;}
+.text-center{ text-align: center; color: #fff;}  
+.footer-logo{text-align: center;}
+.footer-logo img{width: 100%; height: auto; max-width: 33%;}
 .mtop{ margin-top: 26px;}
+.mtop23{ margin-top: 23px;}
 .mtop30{ margin-top: 30px;}
 a{ color:#fff;}
+.text-left{ text-align: left;}
+
+
+/* HTC One portrait and landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    .footer-logo img{ max-width: 85% !important;}
+
+  }
+
+  /* Galaxy S5 portrait and landscape */
+@media screen 
+and (device-width: 360px) 
+and (device-height: 640px) 
+and (-webkit-device-pixel-ratio: 3) {
+    .footer-logo img{ max-width: 85% !important;}
+}
