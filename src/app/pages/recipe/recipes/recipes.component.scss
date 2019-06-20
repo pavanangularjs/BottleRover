@@ -33,14 +33,14 @@
     border-bottom: 1px solid #d7d7d7;
     }
 .Searchrelated_div{
-    margin: 0px 0px 20px 0;
+    margin: 20px 0;
     border-radius: 0px;
     /* padding-bottom: 10px; */
     overflow: hidden;   
 }
 .Searchrelated_div h4{
     width: 50%;
-    height: 21px;
+    //height: 21px;
     padding-left: 12px;
     border: none;
     float: left;
@@ -62,11 +62,12 @@
 }
 
 .thumbnail a img{
-    max-width: 90%;
+    max-width: 100%;
     display: block;
     margin: auto;
     height: auto;
     width: 100%;
+    padding: 12px;
 }
 
 .item_img:hover{
@@ -111,4 +112,61 @@ p {
     width: auto;
     margin: 0 auto;
     display: table;
+}
+
+
+/* iPhone X in landscape */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px) 
+and (-webkit-device-pixel-ratio : 3)
+and (orientation : landscape) {
+    .Searchrelated_div{ margin: 58px 0 20px 0 !important;}
+    //.thumbnail a img{ padding-top:0px !important;}
+    
+}
+
+/* HTC One portrait */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+    .Searchrelated_div{ margin: 58px 0 20px 0 !important;}
+    //.thumbnail a img{ padding-top:0px !important;}
+}
+@media only screen and (min-width: 411px) and (orientation: portrait) {
+    .Searchrelated_div{ margin: 58px 0 20px 0 !important;}
+    .Searchrelated_div h4{ font-size: 1.3em !important; }
+    //.thumbnail a img{ padding-top:0px !important;}
+}
+/* iPhone 5 & 5S in portrait & landscape */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) {
+    .Searchrelated_div{ margin: 58px 0 20px 0 !important;}
+    .Searchrelated_div h4{ font-size: 1.3em !important; }
+    //.thumbnail a img{ padding-top:0px !important;}
+}
+/* iPad in portrait */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+    .thumbnail .caption .text_center{ font-size:10px !important;}
+    
+}
+
+@media only screen and (min-width: 731px) and (orientation: landscape) {
+    /* Retina styles here */
+    //.thumbnail a img{ padding-top:0px !important;}
+    .Searchrelated_div{ margin: 58px 0 20px 0 !important;}
+    .Searchrelated_div h4{ font-size: 1.3em !important; }
+   }
+/* iPhone 6, 7, & 8 in landscape */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : landscape) {
+    .Searchrelated_div{ margin: 58px 0 20px 0 !important;}
 }

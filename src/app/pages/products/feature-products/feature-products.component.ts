@@ -75,13 +75,13 @@ export class FeatureProductsComponent implements OnInit {
       this.onCategoryChange();
     } else {
       this.isFeatureProductsPage = false;
-      this.getProductsList();
+      // this.getProductsList();
     }
   }
 
   getProductsList() {
     if (
-      (this.router.url === '/home' || this.router.url.startsWith('/home')) &&
+      (this.router.url === '/store' || this.router.url.startsWith('/store')) &&
       (!this.productStoreService.isFavoritesUpdated && !this.cartService.isItemRemovedFromCart)) {
       this.productsList = this.storeGetHomeData ? this.storeGetHomeData.HomeList : [];
     } else {

@@ -11,6 +11,7 @@ export class ProgressBarComponent implements OnInit {
   inProgress: boolean;
   constructor(private progressBarService: ProgressBarService) {
     this.progressBarService.progress.subscribe(data => {
+      // setTimeout(() => this.inProgress = data);
       this.inProgress = data;
     });
   }

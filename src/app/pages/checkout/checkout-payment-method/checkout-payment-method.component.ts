@@ -8,6 +8,9 @@ import { ProductStoreService } from '../../../services/product-store.service';
 import { ProgressBarService } from '../../../shared/services/progress-bar.service';
 import { Router } from '@angular/router';
 import { VantivPaymentServerSideApiService } from '../../../services/vantiv-payment-serverside-api.service';
+import { Store } from '@ngrx/store';
+import { CustomerLoginSession } from '../../../models/customer-login-session';
+import { ProductStoreSelectors } from '../../../state/product-store/product-store.selector';
 
 @Component({
   selector: 'app-checkout-payment-method',
@@ -28,7 +31,8 @@ export class CheckoutPaymentMethodComponent implements OnInit {
   onlinePaymentTypeId: number;
   remarks: string;
 
-  constructor(private customerService: CustomerService,
+  constructor(private store: Store<CustomerLoginSession>,
+    private customerService: CustomerService,
     private paymentService: PaymentService,
     // private spinnerService: Ng4LoadingSpinnerService,
     private toastr: ToastrService,
@@ -36,11 +40,17 @@ export class CheckoutPaymentMethodComponent implements OnInit {
     private storeService: ProductStoreService,
     private progressBarService: ProgressBarService,
     private route: Router,
-    private vantivPaymentService: VantivPaymentServerSideApiService) { }
+    private vantivPaymentService: VantivPaymentServerSideApiService) {
+      this.store.select(ProductStoreSelectors.storeGetDetailsData)
+      .subscribe(sgdd => {
+        if (sgdd) {
+          this.storeDetails = sgdd.GetStoredetails;
+        }
+      });
+    }
 
   ngOnInit() {
     this.getPaymentMethodGetList();
-    this.getStoreDetails();
     this.orderTypeId = this.cartService.cartdetails.OrderTypeId;
     this.paymentTypeId = this.cartService.cartdetails.PaymentTypeId;
   }
@@ -147,13 +157,6 @@ export class CheckoutPaymentMethodComponent implements OnInit {
 
   }
 
-  getStoreDetails() {
-    this.storeService.getStoreDetails().subscribe(data => {
-      if (data && data.GetStoredetails) {
-        this.storeDetails = data.GetStoredetails;
-      }
-    });
-  }
 
   saveCVV() {
     this.paymentService.createTransaction.cvv = this.cardCVV;

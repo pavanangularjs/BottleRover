@@ -10,6 +10,7 @@ import { SessionService } from '../../../shared/services/session.service';
 import { Router } from '@angular/router';
 import { AppConfigService } from '../../../app-config.service';
 import { } from 'googlemaps';
+import { StoreGetDetails } from 'src/app/state/product-store/product-store.action';
 
 @Component({
   selector: 'app-landing-page-storelocations',
@@ -116,10 +117,10 @@ export class LandingPageStorelocationsComponent implements OnInit {
       }
     });
 
-    console.log('25 miles List');
+    /* console.log('25 miles List');
     console.log(storeList_25miles);
     console.log('50 miles List');
-    console.log(storeList_50miles);
+    console.log(storeList_50miles); */
 
     this.storeList = [];
 
@@ -145,15 +146,16 @@ export class LandingPageStorelocationsComponent implements OnInit {
   }
 
   navToStore(storeInfo) {
-    console.log(JSON.stringify(storeInfo));
+    // console.log(JSON.stringify(storeInfo));
     this.appConfig.storeID = storeInfo.store.StoreId;
     localStorage.setItem('storeId', storeInfo.store.StoreId.toString());
+    this.storeService.customerSession = null;
     this.sessionService.createNewSession();
     this.router.navigate(['/store']);
   }
 
   onMouseOver(infoWindow, gm) {
-    console.log(infoWindow);
+    // console.log(infoWindow);
     if (gm.lastOpen != null) {
       gm.lastOpen.close();
     }

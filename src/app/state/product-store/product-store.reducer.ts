@@ -2,6 +2,7 @@ import { ProductStoreActionTypes, ProductStoreAction } from './product-store.act
 
 export interface StateModel {
     getStoreHomeData: any;
+    storeGetDetails: any;
     productGetList: any;
     productGetDetails: any;
     eventGetDetails: any;
@@ -9,6 +10,7 @@ export interface StateModel {
 
 const initialState: StateModel = {
     getStoreHomeData: null,
+    storeGetDetails: null,
     productGetList: null,
     productGetDetails: null,
     eventGetDetails: null
@@ -22,6 +24,13 @@ export function productStoreReducer(state = initialState, action: ProductStoreAc
             return {
                 ...state,
                 getStoreHomeData: action.payload
+            };
+        }
+
+        case ProductStoreActionTypes.StoreGetDetailsSuccess: {
+            return {
+                ...state,
+                storeGetDetails: action.payload
             };
         }
 

@@ -1,7 +1,10 @@
 @import "~src/variable.scss";
-.carousel {
-  
-}
+
+.current-store{ font-size: 2em;
+  line-height: 45px;
+  margin-left: -15px;}
+span{ color:#e91d24;}
+
 .carousel-block {
   
   height: auto;

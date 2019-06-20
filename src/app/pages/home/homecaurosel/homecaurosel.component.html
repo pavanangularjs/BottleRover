@@ -43,6 +43,7 @@
   </div>
 </div>
 <div class="container">
+  <h4 class="current-store" *ngIf="(currentStoreId !== undefined) && (storeIdInStoreDetails === currentStoreId)">Current Store: <span>{{storeDetails?.StoreName}}</span></h4>
   <div id="myCarousel" class="carousel slide row">
     <!-- <ol class="carousel-indicators">
       <li data-target="#myCarousel"   [ngClass]="{'active' : i == 0}" *ngFor="let event of eventList; let i = index"></li>

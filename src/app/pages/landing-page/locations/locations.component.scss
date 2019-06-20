@@ -1,4 +1,4 @@
-.loc-city img{ width: 100%; height: auto; max-width: 100%; }
+.loc-city img{ width: 100%; height: auto; max-width: 100%;  cursor: pointer !important;}
 .loc-city{ margin-bottom: 30px; position: relative; cursor: pointer !important;}
 .loc-city h4{ color: #fff;
     font-weight: normal;
@@ -8,7 +8,9 @@
     font-size: 2.8em;
     width: 100%;
     text-align: center;
-    text-transform: uppercase;  font-family: 'CubanoRegular';}
+    text-transform: uppercase; 
+    font-family: 'CubanoRegular';
+    cursor: pointer !important;}
 
     
 /* iPhone X in portrait & landscape */

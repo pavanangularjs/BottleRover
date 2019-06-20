@@ -55,10 +55,10 @@ export class CommonService {
       }
     });
 
-    console.log('25 miles List');
+    /* console.log('25 miles List');
     console.log(storeList_25miles);
     console.log('50 miles List');
-    console.log(storeList_50miles);
+    console.log(storeList_50miles); */
 
     this.storeList = [];
 
@@ -74,7 +74,7 @@ export class CommonService {
   }
 
   getLocation(address: string) {
-    console.log('Getting address: ', address);
+    // console.log('Getting address: ', address);
     const geocoder = new google.maps.Geocoder;
 
     geocoder.geocode({
@@ -82,7 +82,7 @@ export class CommonService {
     }, (results, status) => {
       if (status === google.maps.GeocoderStatus.OK) {
         this.ngZone.run(() => {
-        console.log(results);
+        // console.log(results);
         this.latitude = results[0].geometry.location.lat();
         this.longitude = results[0].geometry.location.lng();
         this.calculateDistance();

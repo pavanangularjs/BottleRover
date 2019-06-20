@@ -24,11 +24,10 @@ export class FooterComponent implements OnInit {
   constructor(private store: Store<CustomerLoginSession>,
     private storeService: ProductStoreService, private authenticationService: AppConfigService) {
     this.partners = this.authenticationService.partners;
-
-    this.store.select(CustomerSelectors.customerLoginSessionData)
-      .subscribe(clsd => {
-        if (clsd && clsd.StoreId !== 0) {
-          this.getStoreDetails();
+    this.store.select(ProductStoreSelectors.storeGetDetailsData)
+      .subscribe(sgdd => {
+        if (sgdd) {
+          this.storeDetails = sgdd.GetStoredetails;
         }
       });
 
@@ -36,11 +35,4 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
-  getStoreDetails() {
-    this.storeService.getStoreDetails().subscribe(data => {
-      if (data && data.GetStoredetails) {
-        this.storeDetails = data.GetStoredetails;
-      }
-    });
-  }
 }

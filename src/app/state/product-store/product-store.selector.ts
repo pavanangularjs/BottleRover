@@ -39,9 +39,19 @@ export const eventGetDetailsData = createSelector(
     }
 );
 
+export const storeGetDetailsData = createSelector(
+    productStoreState,
+    (state) => {
+        if (state) {
+            return state.storeGetDetails;
+        }
+    }
+);
+
 export const ProductStoreSelectors = {
     productStoreStateData,
     productGetListData,
     productGetDetailsData,
-    eventGetDetailsData
+    eventGetDetailsData,
+    storeGetDetailsData
 };

@@ -6,6 +6,8 @@ import { EventGetDetailsRequestPayload } from '../../models/event-get-details-re
 export enum ProductStoreActionTypes {
     StoreGetHome = '[Store] StoreGetHome',
     StoreGetHomeSuccess = '[Store] StoreGetHomeSuccess',
+    StoreGetDetails = '[Store] StoreGetDetails',
+    StoreGetDetailsSuccess = '[Store] StoreGetDetailsSuccess',
     ProductGetList = '[Store] ProductGetList',
     ProductGetListSuccess = '[Store] ProductGetListSuccess',
     ProductGetDetails = '[Store] ProductGetDetails',
@@ -22,6 +24,18 @@ export class StoreGetHome implements Action {
 
 export class StoreGetHomeSuccess implements Action {
     readonly type = ProductStoreActionTypes.StoreGetHomeSuccess;
+
+    constructor(public payload: any) { }
+}
+
+export class StoreGetDetails implements Action {
+    readonly type = ProductStoreActionTypes.StoreGetDetails;
+
+    constructor() { }
+}
+
+export class StoreGetDetailsSuccess implements Action {
+    readonly type = ProductStoreActionTypes.StoreGetDetailsSuccess;
 
     constructor(public payload: any) { }
 }
@@ -65,6 +79,8 @@ export class EventGetDetailsSuccess implements Action {
 export const ProductStoreActions = {
     StoreGetHome,
     StoreGetHomeSuccess,
+    StoreGetDetails,
+    StoreGetDetailsSuccess,
     ProductGetList,
     ProductGetListSuccess,
     ProductGetDetails,
@@ -75,6 +91,8 @@ export const ProductStoreActions = {
 
 export type ProductStoreAction = StoreGetHome |
 StoreGetHomeSuccess |
+StoreGetDetails |
+StoreGetDetailsSuccess |
 ProductGetList |
 ProductGetListSuccess |
 ProductGetDetails |

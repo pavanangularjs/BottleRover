@@ -8,6 +8,7 @@ import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ProgressBarService } from '../../shared/services/progress-bar.service';
 import { ContactUsService } from '../../services/contact-us.service';
+import { ProductStoreSelectors } from '../../state/product-store/product-store.selector';
 
 @Component({
   selector: 'app-contact-us',
@@ -29,12 +30,13 @@ export class ContactUsComponent implements OnInit {
     private progressBarService: ProgressBarService,
     private contactUsService: ContactUsService) {
 
-    this.store.select(CustomerSelectors.customerLoginSessionData)
-      .subscribe(clsd => {
-        if (clsd) {
-          if (clsd.StoreId !== 0) {
-            this.getStoreDetails();
-          }
+      this.store.select(ProductStoreSelectors.storeGetDetailsData)
+      .subscribe(sgdd => {
+        if (sgdd) {
+          this.storeDetails = sgdd.GetStoredetails;
+          // tslint:disable-next-line:max-line-length
+          const url = `https://maps.google.com/maps?q=${this.storeDetails.Latitude},${this.storeDetails.Longitude}&hl=es;z=14&output=embed` ;
+          this.mapURL = this.sanitizer.bypassSecurityTrustResourceUrl(url);
         }
       });
   }
@@ -51,17 +53,6 @@ export class ContactUsComponent implements OnInit {
 
   get f() { return this.formContactUs.controls; }
 
-  getStoreDetails() {
-    this.progressBarService.show();
-    this.storeService.getStoreDetails().subscribe(data => {
-      this.progressBarService.hide();
-      if (data && data.GetStoredetails) {
-        this.storeDetails = data.GetStoredetails;
-        const url = `https://maps.google.com/maps?q=${this.storeDetails.Latitude},${this.storeDetails.Longitude}&hl=es;z=14&output=embed` ;
-        this.mapURL = this.sanitizer.bypassSecurityTrustResourceUrl(url);
-      }
-    });
-  }
 
   onSubmit() {
     this.submitted = true;

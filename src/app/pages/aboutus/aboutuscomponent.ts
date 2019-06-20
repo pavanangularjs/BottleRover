@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductStoreService } from '../../services/product-store.service';
+import { Store } from '@ngrx/store';
+import { CustomerLoginSession } from '../../models/customer-login-session';
+import { ProductStoreSelectors } from '../../state/product-store/product-store.selector';
+
 
 @Component({
   selector: 'app-aboutus',
@@ -9,18 +12,15 @@ import { ProductStoreService } from '../../services/product-store.service';
 export class AboutusComponent implements OnInit {
 
   storeDetails: any;
-  constructor(private storeService: ProductStoreService) {}
-
-  ngOnInit() {
-    this.getStoreDetails();
+  constructor(private store: Store<CustomerLoginSession>) {
+    this.store.select(ProductStoreSelectors.storeGetDetailsData)
+      .subscribe(sgdd => {
+        if (sgdd) {
+          this.storeDetails = sgdd.GetStoredetails;
+        }
+      });
   }
 
-  getStoreDetails() {
-    this.storeService.getStoreDetails().subscribe(data => {
-      if (data && data.GetStoredetails) {
-        this.storeDetails = data.GetStoredetails;
-      }
-    });
-  }
+  ngOnInit() {}
 
 }

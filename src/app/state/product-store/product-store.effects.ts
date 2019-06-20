@@ -34,6 +34,22 @@ export class ProductStoreEffects {
             })
         );
     @Effect()
+    getStoreDetails$ = this.actions$
+        .ofType(fromProductStore.ProductStoreActionTypes.StoreGetDetails)
+        .pipe(
+            withLatestFrom<fromProductStore.StoreGetDetails, RootStateModel>(this.store),
+            switchMap(([action, state]) => {
+                return this.productStoreService.getStoreDetails().pipe(
+                    map(p => {
+                        return new fromProductStore.ProductStoreActions.StoreGetDetailsSuccess(p);
+                    }),
+                    catchError(error =>
+                        of(error)
+                    )
+                );
+            })
+        );
+    @Effect()
     productGetList$ = this.actions$
         .ofType(fromProductStore.ProductStoreActionTypes.ProductGetList)
         .pipe(

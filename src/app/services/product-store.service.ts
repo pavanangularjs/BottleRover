@@ -7,7 +7,7 @@ import { Store } from '@ngrx/store';
 import { baseUrl, UrlNames } from './url-provider';
 import { CustomerSelectors } from '../state/customer/customer.selector';
 import { CustomerLoginSession } from '../models/customer-login-session';
-import { StoreGetHome } from '../state/product-store/product-store.action';
+import { StoreGetHome, StoreGetDetails } from '../state/product-store/product-store.action';
 import { ProductGetListRequestPayload } from '../models/product-get-list-request-payload';
 import { ProductGetDetailsRequestPayload } from '../models/product-get-details-request-payload';
 import { EventGetDetailsRequestPayload } from '../models/event-get-details-request-payload';
@@ -37,8 +37,10 @@ export class ProductStoreService {
             .subscribe(clsd => {
                 if (clsd) {
                     this.customerSession = clsd;
+                    this.storeDetails = null;
                     if (this.customerSession.StoreId !== 0) {
                         this.store.dispatch(new StoreGetHome());
+                        this.store.dispatch(new StoreGetDetails());
                     }
                 }
             });
@@ -86,8 +88,8 @@ export class ProductStoreService {
 
         return this.http.post<any>(baseUrl + UrlNames.StoreGetDetail, this.getProfileDetailsRequestParams()).pipe(
             switchMap((res: any) => {
-                if (res) {
-                    this.storeDetails = res;
+                if (res && res.GetStoredetails) {
+                    this.storeDetails = res.GetStoredetails;
                 }
                 return of(res);
             }),

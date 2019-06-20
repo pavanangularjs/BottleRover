@@ -52,7 +52,7 @@
 
 .Search_div h4{
     width: 50%;
-    height: 27px;
+    //height: 27px;
     padding-left: 12px;
     border: none;
     float: left;
@@ -61,6 +61,7 @@
     font-weight: bold;
     font-size: 21px;
     color: #333;
+    margin: 17px 0 20px 0;
 }
 
 .Searchrelated_div{
@@ -183,10 +184,75 @@ p{
     .details_content h4.recipe_name,.details_content ul li h4.recipe_name,.Searchrelated_div h4 
     {
         font-size: 16px !important;
-    }
-   
+    }  
 
 }
+
+
+/* HTC One portrait and landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    .Search_div{margin: 47px 0 20px 0 !important; width: 100%;}
+    .Search_div h4{  font-size: 1em !important;
+        padding-top: 4px !important;}
+}
+
+
+/* iPhone X in landscape */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px) 
+and (-webkit-device-pixel-ratio : 3)
+and (orientation : landscape) { 
+    .Search_div{margin: 47px 0 20px 0 !important;}
+}
+
+@media only screen and (min-width: 411px) and (orientation: portrait) {
+    .Search_div{margin: 47px 0 20px 0 !important;}
+    .Search_div h4{ font-size: 18px !important; padding-top: 2px; }
+    ol.breadcrumb{ padding-top: 14px !important;}
+}
+/* iPhone 5 & 5S in portrait & landscape */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) {
+    .Search_div{margin: 47px 0 20px 0 !important;}
+}
+
+/* iPhone 5 & 5S in landscape */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : landscape) {
+    .Search_div h4{ font-size: 18px !important; padding-top: 2px; }
+    ol.breadcrumb{ padding-top: 16px !important;}
+
+}
+
+/* iPhone 5 & 5S in portrait */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : portrait) {
+    .Search_div h4{ font-size: 15px !important; padding-top: 2px; }
+}
+
+@media only screen and (min-width: 731px) and (orientation: landscape) {
+    /* Retina styles here */
+    .Search_div{margin: 47px 0 20px 0 !important;}
+}
+
+/* iPhone 6, 7, & 8 in landscape */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : landscape) {
+    .Search_div{margin: 47px 0 20px 0 !important;}
+    ol.breadcrumb{ padding-top: 18px !important;}
+}
+
 
 .no-b-border {
     border-bottom: 0px solid transparent;

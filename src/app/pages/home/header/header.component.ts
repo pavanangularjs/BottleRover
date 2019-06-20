@@ -54,17 +54,18 @@ export class HeaderComponent implements OnInit {
           } else {
             this.isActive = false;
           }
-          if (this.customerSession.StoreId !== 0) {
-            this.getStoreDetails();
-          }
+        }
+      });
+    this.store.select(ProductStoreSelectors.storeGetDetailsData)
+      .subscribe(sgdd => {
+        if (sgdd) {
+          this.storeDetails = sgdd.GetStoredetails;
         }
       });
     this.store.select(ProductStoreSelectors.productStoreStateData)
       .subscribe(pssd => {
         if (pssd) {
           this.storeGetHomeData = pssd;
-          this.getStoreList();
-
           if (this.storeGetHomeData.CustomerInfo && this.storeGetHomeData.CustomerInfo.ProfileImage !== '') {
             this.profilePic = this.storeGetHomeData.CustomerInfo.ProfileImage;
           } else if (this.storeGetHomeData.CustomerInfo && this.storeGetHomeData.CustomerInfo.FirstName) {
@@ -129,37 +130,6 @@ export class HeaderComponent implements OnInit {
     this.openModal.nativeElement.click();
   }
 
-  getStoreList() {
-    this.progressBarService.show();
-    this.storeService.storeGetList().subscribe(data => {
-      if (data && data.ListStore) {
-        this.currentStoreId = data.StoreId;
-
-        const sList = data.ListStore;
-        const fromIndex = sList.findIndex(item => item.StoreId === this.currentStoreId);
-
-        if (fromIndex !== -1)  {
-          const element = sList[fromIndex];
-          sList.splice(fromIndex, 1);
-          sList.splice(0, 0, element);
-        }
-
-        this.storeList = sList;
-        this.progressBarService.hide();
-      }
-    });
-  }
-
-  getStoreDetails() {
-    this.progressBarService.show();
-    this.storeService.getStoreDetails().subscribe(data => {
-      if (data && data.GetStoredetails) {
-        this.storeDetails = data.GetStoredetails;
-      }
-      this.progressBarService.hide();
-    });
-  }
-
   onStoreChange(storeId) {
     this.appConfig.storeID = storeId;
 
@@ -192,26 +162,6 @@ export class HeaderComponent implements OnInit {
       }
     }
 
-    /* if (this.customerSession && this.customerSession.SessionId) {
-      // this.spinnerService.show();
-
-      let demail = localStorage.getItem('email');
-      let dpass = localStorage.getItem('password');
-
-      if (demail && dpass) {
-        demail = CryptoJS.AES.decrypt(demail, baseUrl.substr(3)).toString(CryptoJS.enc.Utf8);
-        dpass = CryptoJS.AES.decrypt(dpass, baseUrl.substr(3)).toString(CryptoJS.enc.Utf8);
-      }
-
-      this.progressBarService.show();
-      if (demail && dpass) {
-        this.store.dispatch(new CustomerLogin(this.appConfig.getLoginCustomerParams(demail, dpass, 'E')));
-      } else {
-        localStorage.removeItem('email');
-        localStorage.removeItem('password');
-        this.store.dispatch(new CustomerLogin(this.appConfig.getLoginCustomerParams()));
-      }
-    }*/
   }
 
   onSignOut() {
