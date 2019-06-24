@@ -38,9 +38,10 @@ export class SignupComponent implements OnInit {
           this.customerSession = clsd;
           // this.spinnerService.hide();
           this.progressBarService.hide();
-          if (this.customerSession.IsAccess === true && this.customerSession.UserId !== 0) {
-            this.router.navigate(['/home']);
-          } else if (this.customerSession.ErrorMessage !== '') {
+          /* if (this.customerSession.IsAccess === true && this.customerSession.UserId !== 0) {
+            this.router.navigate(['/store']);
+          } else  */
+          if (this.customerSession.ErrorMessage !== '') {
             this.toastr.error(clsd.ErrorMessage);
           }
         }

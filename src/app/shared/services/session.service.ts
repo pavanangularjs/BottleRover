@@ -27,7 +27,8 @@ export class SessionService {
     this.store.select(CustomerSelectors.customerLoginSessionData)
       .subscribe(clsd => {
         if (clsd && (this.route.url !== '/home' && !this.route.url.startsWith('/home'))) {
-          this.route.navigate(['/store']); //, { queryParams: { returnUrl: this.route.url } });
+          localStorage.setItem('storeId', clsd.StoreId.toString());
+          this.route.navigate(['/store']); // , { queryParams: { returnUrl: this.route.url } });
         }
       });
   }

@@ -45,8 +45,13 @@ export class SigninComponent implements OnInit {
     this.store.select(CustomerSelectors.customerLoginSessionData)
       .subscribe(clsd => {
         if (clsd) {
-          // this.customerSession = clsd;
+          const customerSession = clsd;
           this.progressBarService.hide();
+          if (this.router.url === '/login' && customerSession.UserId === 0 &&  localStorage.getItem('isSignIn') === '1') {
+            this.router.navigate(['/home']);
+          } else if (this.router.url === '/login' && customerSession.UserId !== 0 ) {
+            this.router.navigate(['/store']);
+          }
         }
       });
   }
@@ -143,7 +148,6 @@ export class SigninComponent implements OnInit {
       localStorage.setItem('isSignIn', '1');
       this.clearLocalStorage();
     }
-
   }
 
   clearLocalStorage() {

@@ -41,7 +41,7 @@ const routes: Routes = [
     path: 'store',
     component: HomepageComponent,
     // resolve: { token: HomePageResolver },
-    runGuardsAndResolvers: 'always'
+    canActivate: [GeneralGuard]
   },
   { path: 'store-locations', component: LandingPageStorelocationsComponent, canActivate: [GeneralGuard] },
   { path: 'aboutus', component: AboutusComponent, canActivate: [GeneralGuard] },
