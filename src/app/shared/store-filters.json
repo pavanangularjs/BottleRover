@@ -73,27 +73,24 @@
             ],
             "ListType": [
                 {
-                    "TypeId": 18,
-                    "TypeName": "Imports & Microbrews",
-                    "ListVarietal": []
-                },
-                {
-                    "TypeId": 19,
-                    "TypeName": "Malt Beverage",
-                    "ListVarietal": []
-                },
-                {
-                    "TypeId": 20,
-                    "TypeName": "Domestic",
-                    "ListVarietal": []
-                },
-                {
                     "TypeId": 24,
-                    "TypeName": "Craft Beer",
+                    "TypeName": "Craft",
                     "ListVarietal": [
+                        {
+                            "VarietalId": 43,
+                            "VarietalName": "IPA"
+                        },
                         {
                             "VarietalId": 38,
                             "VarietalName": "Ales"
+                        },
+                        {
+                            "VarietalId": 44,
+                            "VarietalName": "Lagers & Pilsners"
+                        },
+                        {
+                            "VarietalId": 49,
+                            "VarietalName": "Wheats & Shandys"
                         },
                         {
                             "VarietalId": 39,
@@ -112,18 +109,6 @@
                             "VarietalName": "Gluten-Free"
                         },
                         {
-                            "VarietalId": 43,
-                            "VarietalName": "IPA"
-                        },
-                        {
-                            "VarietalId": 44,
-                            "VarietalName": "Lagers & Pilsners"
-                        },
-                        {
-                            "VarietalId": 45,
-                            "VarietalName": "Others"
-                        },
-                        {
                             "VarietalId": 46,
                             "VarietalName": "Pale Ales"
                         },
@@ -136,14 +121,29 @@
                             "VarietalName": "Stouts & Porters"
                         },
                         {
-                            "VarietalId": 49,
-                            "VarietalName": "Wheats & Shandys"
+                            "VarietalId": 45,
+                            "VarietalName": "Others"
                         }
                     ]
                 },
                 {
+                    "TypeId": 18,
+                    "TypeName": "Imports & Microbrews",
+                    "ListVarietal": []
+                },
+                {
+                    "TypeId": 20,
+                    "TypeName": "Domestic",
+                    "ListVarietal": []
+                },
+                {
                     "TypeId": 25,
                     "TypeName": "Kegs",
+                    "ListVarietal": []
+                },
+                {
+                    "TypeId": 19,
+                    "TypeName": "Malt Beverage",
                     "ListVarietal": []
                 },
                 {
@@ -195,23 +195,18 @@
             ],
             "ListType": [
                 {
-                    "TypeId": 8,
-                    "TypeName": "Cognac/Brandy",
+                    "TypeId": 16,
+                    "TypeName": "Vodka",
                     "ListVarietal": []
                 },
                 {
-                    "TypeId": 9,
-                    "TypeName": "Cordials/Liqueurs",
+                    "TypeId": 14,
+                    "TypeName": "Scotch",
                     "ListVarietal": []
                 },
                 {
-                    "TypeId": 10,
-                    "TypeName": "Gin",
-                    "ListVarietal": []
-                },
-                {
-                    "TypeId": 11,
-                    "TypeName": "Pre-Mixed Cocktails",
+                    "TypeId": 17,
+                    "TypeName": "Whiskey",
                     "ListVarietal": []
                 },
                 {
@@ -220,28 +215,33 @@
                     "ListVarietal": []
                 },
                 {
-                    "TypeId": 13,
-                    "TypeName": "Sake",
-                    "ListVarietal": []
-                },
-                {
-                    "TypeId": 14,
-                    "TypeName": "Scotch/Whisky",
-                    "ListVarietal": []
-                },
-                {
                     "TypeId": 15,
                     "TypeName": "Tequila",
                     "ListVarietal": []
                 },
                 {
-                    "TypeId": 16,
-                    "TypeName": "Vodka",
+                    "TypeId": 10,
+                    "TypeName": "Gin",
                     "ListVarietal": []
                 },
                 {
-                    "TypeId": 17,
-                    "TypeName": "Whiskey",
+                    "TypeId": 9,
+                    "TypeName": "Cordials/Liqueurs",
+                    "ListVarietal": []
+                },
+                {
+                    "TypeId": 8,
+                    "TypeName": "Cognac/Brandy",
+                    "ListVarietal": []
+                },
+                {
+                    "TypeId": 11,
+                    "TypeName": "Pre-Mixed Cocktails",
+                    "ListVarietal": []
+                },
+                {
+                    "TypeId": 13,
+                    "TypeName": "Sake",
                     "ListVarietal": []
                 },
                 {
@@ -301,32 +301,6 @@
             ],
             "ListType": [
                 {
-                    "TypeId": 1,
-                    "TypeName": "White",
-                    "ListVarietal": [
-                        {
-                            "VarietalId": 10,
-                            "VarietalName": "Other White"
-                        },
-                        {
-                            "VarietalId": 11,
-                            "VarietalName": "Chardonnay"
-                        },
-                        {
-                            "VarietalId": 12,
-                            "VarietalName": "Sauvignon Blanc"
-                        },
-                        {
-                            "VarietalId": 13,
-                            "VarietalName": "Pinot Gris/Pinot Grigio"
-                        },
-                        {
-                            "VarietalId": 14,
-                            "VarietalName": "Riesling"
-                        }
-                    ]
-                },
-                {
                     "TypeId": 2,
                     "TypeName": "Red",
                     "ListVarietal": [
@@ -339,16 +313,16 @@
                             "VarietalName": "Pinot Noir"
                         },
                         {
-                            "VarietalId": 3,
-                            "VarietalName": "Other Red"
+                            "VarietalId": 5,
+                            "VarietalName": "Merlot"
+                        },
+                        {
+                            "VarietalId": 8,
+                            "VarietalName": "Zinfandel"
                         },
                         {
                             "VarietalId": 4,
                             "VarietalName": "Malbec"
-                        },
-                        {
-                            "VarietalId": 5,
-                            "VarietalName": "Merlot"
                         },
                         {
                             "VarietalId": 6,
@@ -359,15 +333,42 @@
                             "VarietalName": "Tempranillo"
                         },
                         {
-                            "VarietalId": 8,
-                            "VarietalName": "Zinfandel"
-                        },
-                        {
                             "VarietalId": 9,
                             "VarietalName": "Grenache"
+                        },
+                        {
+                            "VarietalId": 3,
+                            "VarietalName": "Other Red"
                         }
                     ]
                 },
+                {
+                    "TypeId": 1,
+                    "TypeName": "White",
+                    "ListVarietal": [
+                        {
+                            "VarietalId": 11,
+                            "VarietalName": "Chardonnay"
+                        },
+                        {
+                            "VarietalId": 13,
+                            "VarietalName": "Pinot Gris/Pinot Grigio"
+                        },
+                        {
+                            "VarietalId": 12,
+                            "VarietalName": "Sauvignon Blanc"
+                        },
+                        {
+                            "VarietalId": 14,
+                            "VarietalName": "Riesling"
+                        },
+                        {
+                            "VarietalId": 10,
+                            "VarietalName": "Other White"
+                        }
+                    ]
+                },
+                
                 {
                     "TypeId": 3,
                     "TypeName": "Sparkling",
@@ -451,6 +452,20 @@
                     ]
                 },
                 {
+                    "TypeId": 7,
+                    "TypeName": "Non-alcoholic",
+                    "ListVarietal": [
+                        {
+                            "VarietalId": 30,
+                            "VarietalName": "Non-Alcoholic Sparkling"
+                        },
+                        {
+                            "VarietalId": 31,
+                            "VarietalName": "Non-Alcoholic Red"
+                        }
+                    ]
+                },
+                {
                     "TypeId": 6,
                     "TypeName": "Port / Sherry",
                     "ListVarietal": [
@@ -469,20 +484,6 @@
                         {
                             "VarietalId": 35,
                             "VarietalName": "Madeira"
-                        }
-                    ]
-                },
-                {
-                    "TypeId": 7,
-                    "TypeName": "Non-alcoholic",
-                    "ListVarietal": [
-                        {
-                            "VarietalId": 30,
-                            "VarietalName": "Non-Alcoholic Sparkling"
-                        },
-                        {
-                            "VarietalId": 31,
-                            "VarietalName": "Non-Alcoholic Red"
                         }
                     ]
                 },
@@ -530,10 +531,7 @@
                             "RegionId": 5,
                             "RegionName": "Champagne"
                         },
-                        {
-                            "RegionId": 11,
-                            "RegionName": "Bordeaux"
-                        },
+                        
                         {
                             "RegionId": 15,
                             "RegionName": "Languedoc-Roussillon"
