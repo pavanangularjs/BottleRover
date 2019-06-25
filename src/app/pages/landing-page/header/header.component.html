@@ -2,7 +2,8 @@
 <div class="col-md-12">
   <div class="col-md-3 col-sm-12 col-xs-12 logo"><a [routerLink]="['/home']"><img src="../../../../assets/landing-page-images/logo-bottlerover.png"></a></div>
   <div class="col-md-7 col-sm-12 col-xs-12 slogan">Shop Beer, Wine and Liquor</div>
-  <div class="col-md-2 col-sm-12 col-xs-12 login"><a [routerLink]="['/login']">Login <span><i class="fa fa-user-circle"></i></span></a></div>
+  <div *ngIf="!isLogin" class="col-md-2 col-sm-12 col-xs-12 login"><a [routerLink]="['/login']">Login <span><i class="fa fa-user-circle"></i></span></a></div>
+  <div *ngIf="isLogin" class="col-md-2 col-sm-12 col-xs-12 login"><a href="javascript:void(0);" (click)="onSignOut()"> Logout <span><i class="fa fa-sign-out"></i></span></a></div>
 </div>
 </header>
 <div class="clearfix"></div>

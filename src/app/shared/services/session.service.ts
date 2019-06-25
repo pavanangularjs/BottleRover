@@ -28,7 +28,11 @@ export class SessionService {
       .subscribe(clsd => {
         if (clsd && (this.route.url !== '/home' && !this.route.url.startsWith('/home'))) {
           localStorage.setItem('storeId', clsd.StoreId.toString());
-          this.route.navigate(['/store']); // , { queryParams: { returnUrl: this.route.url } });
+          if (clsd.StoreId !== 0) {
+            this.route.navigate(['/store']); // , { queryParams: { returnUrl: this.route.url } });
+          } else {
+            this.route.navigate(['/home']); // , { queryParams: { returnUrl: this.route.url } });
+          }
         }
       });
   }

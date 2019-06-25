@@ -167,6 +167,7 @@ export class HeaderComponent implements OnInit {
   onSignOut() {
     sessionStorage.clear();
     localStorage.setItem('isSignIn', '0');
+    localStorage.removeItem('storeId');
     // localStorage.removeItem(key);  for removing a single item
     location.reload();
     this.store.dispatch(new CustomerLogin(this.appConfig.getLoginCustomerParams()));
