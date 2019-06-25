@@ -6,11 +6,11 @@ import { CustomerLoginSession } from '../../../models/customer-login-session';
 import { CustomerSelectors } from '../../../state/customer/customer.selector';
 import { ProgressBarService } from '../../../shared/services/progress-bar.service';
 import { CommonService } from '../../../shared/services/common.service';
+import { CustomerService } from '../../../services/customer.service';
 
 import { Router } from '@angular/router';
 
 import { } from 'googlemaps';
-import { distinct } from 'rxjs/operators';
 
 @Component({
   selector: 'app-landing-page-search-by-address',
@@ -26,6 +26,8 @@ export class LandingPageSearchByAddressComponent implements OnInit {
   storeList_50miles: any;
   matchedStoreList: any;
   searchText: string;
+  profile: any;
+  @ViewChild('openSorryModal') openModal: ElementRef;
 
   @ViewChild('search')
   public searchElementRef: ElementRef;
@@ -36,13 +38,20 @@ export class LandingPageSearchByAddressComponent implements OnInit {
     private progressBarService: ProgressBarService,
     private storeService: ProductStoreService,
     private commonService: CommonService,
-    private router: Router) {
+    private router: Router,
+    private customerService: CustomerService) {
     this.store.select(CustomerSelectors.customerLoginSessionData)
       .subscribe(clsd => {
         if (clsd) {
           this.getStoreList();
+          this.getUserProfile();
         }
       });
+    this.commonService.noStores.subscribe(data => {
+      if (data) {
+        this.openModal.nativeElement.click();
+      }
+    });
   }
 
   ngOnInit() {
@@ -72,6 +81,13 @@ export class LandingPageSearchByAddressComponent implements OnInit {
           this.commonService.calculateDistance();
         });
       });
+    });
+  }
+
+  getUserProfile() {
+    this.customerService.getProfileDetails().subscribe(
+      (data: any) => {
+        this.profile = data;
     });
   }
 

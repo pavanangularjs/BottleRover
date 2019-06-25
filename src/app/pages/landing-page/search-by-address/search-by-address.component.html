@@ -1,25 +1,24 @@
 <div class="col-md-12 header">
   <div class="banner-img">
-  <div class="banner">
-  <div class="hero-text">Thirsty?
-      <span>Bottlerover to the rescue.</span>
-  </div>
-  
-  
-  <div class="col-md-12 control-section">
-    <div id='iconList' class="col-md-6">
-      <div class="content">
-        <h4>Search By Address</h4>
-        <a class="search-icon">
-            <i class="fa fa-search"></i>
-          </a>
-        <input type="text" class="form-control" 
-          placeholder="Search by Address, City or Zip Code" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" [(ngModel)]="searchText"
-          #search>
-        <h3>Beer, Wine and Spirits delivered to your door.</h3>
+    <div class="banner">
+      <div class="hero-text">Thirsty?
+        <span>Bottlerover to the rescue.</span>
+      </div>
+      <div class="col-md-12 control-section">
+        <div id='iconList' class="col-md-6">
+          <div class="content">
+            <h4>Search By Address</h4>
+            <a class="search-icon">
+              <i class="fa fa-search"></i>
+            </a>
+            <input type="text" class="form-control" placeholder="Search by Address, City or Zip Code" autocorrect="off"
+              autocapitalize="off" spellcheck="off" type="text" [(ngModel)]="searchText" #search>
+            <h3>Beer, Wine and Spirits delivered to your door.</h3>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-</div>
-</div>
+<app-sorry-page [userProfile]="profile"></app-sorry-page>
+<button id="openSorryModal" #openSorryModal [hidden]="true" data-toggle="modal" data-target="#sorryModal"></button>

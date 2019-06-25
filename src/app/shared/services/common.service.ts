@@ -10,6 +10,7 @@ export class CommonService {
   orderPlaced = new Subject<boolean>();
   locationChanged = new Subject<any>();
   stateSelected = new Subject<any>();
+  noStores = new Subject<boolean>();
   storeList: any;
   allStoresList: any;
   latitude: number;
@@ -67,10 +68,14 @@ export class CommonService {
     } else if (storeList_50miles.length > 0) {
       this.storeList = storeList_50miles.sort((x, y) => x.miles < y.miles ? -1 : 1);
     }
-    if (this.router.url !== '/store-locations') {
-      this.router.navigate(['/store-locations']);
-    }
 
+    if (this.storeList && this.storeList.length > 0) {
+      if (this.router.url !== '/store-locations') {
+        this.router.navigate(['/store-locations']);
+      }
+    } else {
+      this.noStores.next(true);
+    }
   }
 
   getLocation(address: string) {

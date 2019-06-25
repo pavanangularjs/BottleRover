@@ -1,0 +1,134 @@
+.sorry img {
+  width: 100%;
+  max-width: 90%;
+  height: auto;
+}
+#myImg {
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  // overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(167, 31, 40, 0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 100%;
+  //max-width: 700px;
+  height: 80%;
+  background-color: transparent !important;
+  border: none !important;
+  color: #fff;
+}
+
+.modal-content h1 {
+  font-size: 6em;
+  font-weight: normal !important;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.modal-content h2,
+.modal-content h2.checkback {
+  text-transform: uppercase;
+  font-weight: normal !important;
+  font-size: 2em;
+}
+.modal-content h2.checkback {
+  font-size: 1.6em !important;
+}
+.modal-content h3 {
+  text-transform: uppercase;
+  font-weight: normal !important;
+  font-size: 1.5em;
+}
+.modal-content h4 {
+  text-transform: uppercase;
+  font-weight: normal !important;
+  font-size: 1em;
+}
+.modal-content .btn-default {
+  background: #fff;
+  color: #e91d24;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content,
+#caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 65px;
+  font-weight: normal !important;
+  transition: 0.3s;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+    background-color: transparent !important;
+    border: none !important;
+  }
+}

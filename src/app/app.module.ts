@@ -90,6 +90,7 @@ import { OfferComponent } from './pages/offer/offer.component';
 import { AdvancedFilterAllComponent } from './pages/products/advanced-filter-all/advanced-filter-all.component';
 import { PhoneMaskDirective } from './shared/directives/phone-mask.directive';
 import { PreloaderComponent } from './pages/checkout/preloader/preloader.component';
+import { SorryPageComponent } from './pages/landing-page/sorry-page/sorry-page.component';
 
 // Configs
 export function getAuthServiceConfigs() {
@@ -160,7 +161,8 @@ export function getAuthServiceConfigs() {
     OffersComponent,
     AdvancedFilterAllComponent,
     PhoneMaskDirective,
-    PreloaderComponent
+    PreloaderComponent,
+    SorryPageComponent
   ],
   imports: [
     BrowserModule,
