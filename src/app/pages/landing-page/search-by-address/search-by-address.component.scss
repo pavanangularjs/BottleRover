@@ -6,8 +6,8 @@
     background-size: contain;} 
 .banner-img{ width: 100%; height: 93%; max-width: 100%; background: url(../../../../assets/landing-page-images/banner.png);
     background-size: cover;}
-.hero-text{ color: #fff; font-size: 15em; font-family: 'CubanoRegular'; text-align: center; width: 100%; text-transform: uppercase; font-weight: 400;
-span{ font-size: 0.3em !important;
+.hero-text{ color: #fff; font-size: 12em; font-family: 'CubanoRegular'; text-align: center; width: 100%; text-transform: uppercase; font-weight: 400;
+span{ font-size: 0.25em !important;
     text-align: center;
     text-transform: uppercase;
     display: block;
@@ -17,8 +17,11 @@ span{ font-size: 0.3em !important;
   /*Banner and Banner Text*/
 
   /*Search*/
+  input[type="text"].ng-pristine::-webkit-input-placeholder {
+    font-size: 0.9em;
+  }
   .control-section{ 
-    width: 80%; margin-left: 298px;
+    width: 73%; margin-left: 386px;
     z-index: 99999;}
     h4{ color: #fff; white-space: nowrap; text-transform: uppercase;  font-family: 'CubanoRegular'; font-weight: 100; font-size: 1.3em; background: #e91d24; width: 40% !important; padding:10px 15px; margin-bottom: 0px;}
     .e-input-group{width: 100%;
@@ -202,7 +205,7 @@ and (orientation : portrait) {
 and (min-device-width : 320px) 
 and (max-device-width : 568px) {
   .control-section{ margin-left: 15px;}
-  .hero-text{ font-size:6.8em !important; 
+  .hero-text{ font-size:4em !important; 
     span{ font-size: 0.32em !important;}
     }
     .header, .banner{ height: 450px !important;}
@@ -271,7 +274,7 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px) 
 and (orientation : landscape) {
   .control-section{ margin-left: 136px !important;}
-  .hero-text{ font-size:11em !important; margin-top: 48px; }
+  .hero-text{ font-size:10em !important; margin-top: 48px; }
   .banner{ top:-49px;}
 }
 

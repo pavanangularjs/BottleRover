@@ -1,81 +1,361 @@
 @import "~src/variable.scss";
-
-.active-star i.fa-star{
-    color: $lukas-color;
+i.icon-favorites,
+i.icon-add-to-my-cart,
+i.icon.icon-remove-cart.active,
+i.active {
+  padding-top: 70%;
+  display: inline-block;
 }
-.strike_text{
-    text-decoration: line-through;
-    font-family:$montserrat-bold;
-    font-size: 17px !important;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #c2c4ca;
-    float: left;
-    padding-right: 35px;
-   
+.active-star i.fa-star {
+  color: $lukas-color;
+}
+.strike_text {
+  text-decoration: line-through;
+  font-family: $montserrat-bold;
+  font-size: 14px !important;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #c2c4ca;
+  float: left;
+  //padding-right: 35px;
 }
 
 .limit-per-user {
-    color: #ff0000;
-    font-size: 10px;
+  color: #ff0000;
+  font-size: 10px;
 }
 .sale-tag {
-    position: relative;
-    img {
-        position: absolute;
-        right: 0px;
-        top: -5px;
-        border-top-right-radius: 10px;
-    }
+  position: relative;
+  img {
+    position: absolute;
+    right: 0px;
+    top: -5px;
+    border-top-right-radius: 10px;
+  }
+}
+.margin_bottom a.pimg img {
+  width: 100%;
+  max-width: 47%;
+  height: auto;
+  cursor: pointer;
+  /* position: relative;
+  left: 25px; */
+}
+:host(.mixers) ::ng-deep a.pimg img {
+  max-width: 100%;
+}
+
+/* Google Pixel 2XL landscape */
+/* Landscape */
+@media only screen and (min-device-width: 823px) and (orientation: landscape) {
+  i.icon-favorites,
+  i.icon-add-to-my-cart,
+  i.icon.icon-remove-cart.active {
+    padding-top: 81% !important;
+  }
+  .margin_bottom a.pimg img {
+    height: auto !important;
+    max-width: 44% !important;
+  }
 }
 
 /* iPhone 2G-4S in portrait & landscape */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) {
-  .Main_bottlesection img{
-    width:35px !important;
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .sale-tag img {
+    width: 35px !important;
   }
-  .margin_bottom img.second_img{ height: 100px !important;}
-  i.icon-favor{ font-size: 20px !important;}
-  i.icon-add-to-my-cart{ font-size: 24px;}
+  // .margin_bottom img.second_img{ height: 100px !important;}
+  i.icon-favor {
+    font-size: 20px !important;
+  }
+  i.icon-add-to-my-cart {
+    font-size: 24px;
+  }
   //.margin_bottom{ height: 40%; min-height: 56%;}
   //.second_content{ height: 73% !important;}
-  .img_div{ margin-bottom: 0px !important; height: 210px !important;}
+  .img_div {
+    margin-bottom: 0px !important;
+    height: 210px !important;
+  }
+  i.icon-favorites,
+  i.icon-add-to-my-cart,
+  i.icon.icon-remove-cart.active {
+    padding-top: 99% !important;
+  }
+  i.icon.icon-remove-cart.active {
+    font-size: 21px !important;
+  }
 }
 
 /* iPhone 2G-4S in landscape */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) 
-and (orientation : landscape) {
-  .Main_bottlesection img{
-    width:35px !important;
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  .sale-tag img {
+    width: 35px !important;
   }
-  .margin_bottom img.second_img{ height: 100px !important;}
-  i.icon-favor{ font-size: 20px !important;}
-  i.icon-add-to-my-cart{ font-size: 24px;}
-  .margin_bottom{ min-height: 56%;}
-  .second_content{ height: 73% !important;}
-  .img_div{ margin-bottom: 0px !important; height: 210px !important;}
-  .margin-bottom-20{margin-bottom:45px !important;}
+  //.margin_bottom img.second_img{ height: 100px !important;}
+  i.icon-favor {
+    font-size: 20px !important;
+  }
+  i.icon-add-to-my-cart {
+    font-size: 24px;
+  }
+  .margin_bottom {
+    min-height: 56%;
+  }
+  .second_content {
+    height: 73% !important;
+  }
+  .img_div {
+    margin-bottom: 0px !important;
+    height: 210px !important;
+  }
+  .margin-bottom-20 {
+    margin-bottom: 45px !important;
+  }
 }
 
 /* iPhone 2G-4S in portrait */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) 
-and (orientation : portrait) {
-  .Main_bottlesection img{
-    max-width:35px !important;
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  .sale-tag img {
+    max-width: 47% !important;
     height: auto !important;
   }
-  .margin_bottom img.second_img{ height: auto !important;}
-  i.icon-favor{ font-size: 20px !important;}
-  i.icon-add-to-my-cart{ font-size: 24px;}
-  .margin_bottom{ min-height: 45% !important;}
-  .second_content{ height: 67% !important; float: left; margin-bottom:10px;}
-  .img_div{ margin-bottom: 0px !important; height: 210px !important;}
+  .margin_bottom a.pimg img {
+    height: auto !important;
+    max-width: 85% !important;
+  }
+  i.icon-favor {
+    font-size: 20px !important;
+  }
+  i.icon-add-to-my-cart {
+    font-size: 24px;
+  }
+  .margin_bottom {
+    min-height: 67% !important;
+  }
+  .second_content {
+    height: 70% !important;
+    float: left;
+    margin-bottom: 10px;
+  }
+  .img_div {
+    margin-bottom: 0px !important;
+    height: 210px !important;
+  }
+  i.icon-favorites,
+  i.icon-add-to-my-cart,
+  i.icon.icon-remove-cart.active,
+  i.icon-remove-from-my-cart {
+    padding-top: 99% !important;
+  }
+  i.icon.icon-remove-cart.active {
+    font-size: 22px !important;
+  }
+  //p{ height: 30px;}
+  i.icon-remove-from-my-cart {
+    font-size: 22px;
+    display: inline-block;
+  }
+}
+
+/* HTC One portrait and landscape */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+}
+
+/* HTC One portrait */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  i.icon-favorites {
+    font-size: 18px !important;
+  }
+  i.icon-add-to-my-cart {
+    font-size: 22px !important;
+  }
+  .sale-tag img {
+    width: 100% !important;
+    max-width: 23% !important;
+  }
+  .margin_bottom {
+    padding-bottom: 10px;
+  }
+  i.icon-favorites,
+  i.icon-add-to-my-cart {
+    padding-top: 128%;
+  }
+  i.icon-favorites,
+  i.icon-add-to-my-cart,
+  i.icon.icon-remove-cart.active {
+    padding-top: 120% !important;
+  }
+  i.icon.icon-remove-cart.active {
+    font-size: 24px !important;
+  }
+  a.pimg {
+    text-align: center;
+    display: -webkit-box;
+    padding: 0px !important;
+  }
+  a.pimg img {
+    max-width: 100% !important;
+  }
+}
+
+/* HTC One landscape */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+  a.pimg img {
+    max-width: 55% !important;
+  }
+  i.icon-favorites {
+    font-size: 23px !important;
+    margin-top: 3px !important;
+  }
+}
+@media only screen and (min-width: 411px) and (orientation: portrait) {
+  i.icon-favorites {
+    font-size: 21px !important;
+  }
+  i.icon-add-to-my-cart {
+    font-size: 30px !important;
+  }
+  .sale-tag img {
+    width: 100% !important;
+    max-width: 85% !important;
+  }
+  .margin_bottom {
+    padding-bottom: 10px;
+  }
+  i.icon.icon-remove-cart.active {
+    font-size: 25px;
+  }
+  i.icon-favorites,
+  i.icon-add-to-my-cart,
+  i.icon.icon-remove-cart.active {
+    padding-top: 138% !important;
+  }
+}
+
+/* iPhone 5 & 5S in portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  i.icon-favorites {
+    font-size: 17px !important;
+    margin-top: 4px !important;
+  }
+  i.icon-add-to-my-cart {
+    font-size: 22px !important;
+  }
+  .sale-tag img {
+    width: 100% !important;
+    max-width: 23% !important;
+  }
+  .margin_bottom {
+    padding-bottom: 10px;
+  }
+  i.icon-favorites,
+  i.icon-add-to-my-cart,
+  i.icon.icon-remove-cart.active {
+    padding-top: 99% !important;
+  }
+  i.icon.icon-remove-cart.active {
+    font-size: 21px !important;
+  }
+}
+/* iPhone 5 & 5S in landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  i.icon-favorites {
+    font-size: 28px !important;
+  }
+  i.icon-add-to-my-cart {
+    font-size: 30px !important;
+  }
+  .sale-tag img {
+    width: 100% !important;
+    max-width: 23% !important;
+  }
+  .margin_bottom {
+    padding-bottom: 10px;
+  }
+  .margin_bottom a.pimg img {
+    height: auto !important;
+    max-width: 55% !important;
+  }
+}
+
+/* Galaxy S5 landscape */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+  .margin_bottom {
+    min-height: 55% !important;
+  }
+  i.icon-favorites {
+    font-size: 23px !important;
+    margin-top: 3px !important;
+  }
+}
+
+/* iPad in portrait & landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .margin_bottom a.pimg img {
+    height: auto !important;
+  }
+}
+
+/* iPad in portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .margin_bottom a.pimg img {
+    height: auto !important;
+    max-width: 50% !important;
+  }
+  .sale-tag img {
+    width: 100% !important;
+    max-width: 17% !important;
+  }
+  i.icon-favorites,
+  i.icon-add-to-my-cart,
+  i.icon.icon-remove-cart.active {
+    padding-top: 54% !important;
+  }
+  a.pimg img {
+    max-width: 63% !important;
+  }
+}
+
+/* iPad in landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .margin_bottom a.pimg img {
+    height: auto !important;
+    max-width: 74% !important;
+  }
+  .sale-tag img {
+    max-width: 70% !important;
+  }
+  i.icon-favorites,
+  i.icon-add-to-my-cart,
+  i.icon.icon-remove-cart.active {
+    padding-top: 110%;
+    display: inline-block;
+  }
+  .second_content {
+    min-height: 52% !important;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3.5),
+  only screen and (min--moz-device-pixel-ratio: 3.5),
+  only screen and (-o-min-device-pixel-ratio: 3.5/1),
+  only screen and (min-device-pixel-ratio: 3.5),
+  only screen and (min-resolution: 538dpi),
+  only screen and (min-resolution: 3.5dppx) {
+  a.pimg img {
+    max-width: 43% !important;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  .margin_bottom a.pimg img {
+    max-width: 56% !important;
+  }
+  i.icon-favorites {
+    font-size: 23px !important;
+    margin-top: 3px !important;
+  }
 }

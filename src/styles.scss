@@ -253,14 +253,6 @@ table tr td .img_div{
     /* position: relative;
     left: 40px;   */
 }
-.margin_bottom img.second_img {
-    width: auto;
-    max-width: 35%;
-    height: 160px !important;
-    cursor: pointer;
-    /* position: relative;
-    left: 25px; */
-}
 
 
 .gallery{
@@ -314,18 +306,18 @@ table tr td .img_div{
     color: #262628;
     //position: absolute;
 }
-.second_content p.price{
+.second_content .price{
     font-family:montserratbold;
-    font-size: 16px;
+    //font-size: 14px;
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: $lukas-color;
     margin: 0;
     position: relative;
     top: 0px;
 }
+.price p{ font-size: 14px; color: $lukas-color;}
 .second_content h4,.second_content h5{
     font-family:montserratbold;
     font-size: 12px;
@@ -575,7 +567,7 @@ nav .navbar-nav ul li a{
 .strike_text{
     text-decoration: line-through;
     font-family:montserratbold;
-    font-size: 18px !important;
+    font-size: 14px !important;
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
@@ -2105,3 +2097,20 @@ a img.second_img {
     z-index: 99999 !important;
 }
 .pac-container.pac-logo.hdpi::after{ display: none;}
+.pac-container.pac-logo.hdpi::after{ display: none;}
+
+/* HTC One portrait */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+    .Searchrelated_noborder h4{ margin-top: 57px;}
+}
+
+
+
+@media only screen and (min-width: 411px) and (orientation: portrait) {
+    .Searchrelated_noborder h4{ margin-top: 57px;}
+     }
+     
