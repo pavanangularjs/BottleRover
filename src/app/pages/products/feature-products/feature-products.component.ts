@@ -33,6 +33,7 @@ export class FeatureProductsComponent implements OnInit {
     private router: Router,
     private progressBarService: ProgressBarService,
     private cartService: CartService) {
+      this.productsList = null;
 
       this.store.select(ProductStoreSelectors.productStoreStateData)
       .subscribe(pssd => {
@@ -46,7 +47,7 @@ export class FeatureProductsComponent implements OnInit {
 
       this.store.select(ProductStoreSelectors.productGetListData)
         .subscribe(pgld => {
-          if (pgld) {
+          if (pgld && this.router.url === '/feature-products') {
             this.productsList = pgld ? pgld.ListProduct : [];
             this.totalCount = pgld.TotalCount;
             // this.spinnerService.hide();
@@ -68,14 +69,14 @@ export class FeatureProductsComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.productsList = null;
+    // this.productsList = null;
     // console.log(this.router.url);
     if (this.router.url === '/feature-products') {
       this.isFeatureProductsPage = true;
       this.onCategoryChange();
     } else {
       this.isFeatureProductsPage = false;
-      // this.getProductsList();
+      this.getProductsList();
     }
   }
 
