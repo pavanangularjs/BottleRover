@@ -1,5 +1,9 @@
 @import "~src/variable.scss";
 
+:host(.fpimg) a.pimg img {
+  height: auto !important;
+  max-width: 70% !important;
+}
 .Searchrelated_noborder h4{
     /* width: 50%; */
     /* height: 20px; */
@@ -94,6 +98,7 @@
         margin-right:8px;
         background: transparent;
     }
+    .fpimg a.pimg img{ max-width: 70% !important;}
 
     .button_feature button:focus, .button_feature button:hover, .button_feature button.active {
         font-family: $poppins-regular !important;

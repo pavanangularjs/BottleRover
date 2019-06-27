@@ -1,5 +1,9 @@
 @import "~src/variable.scss";
 
+// :host(a.pimg img) ::ng-deep .mixers {
+//   height: auto !important;
+//   max-width: 46% !important;
+// }
 .seach input {
     width: 100%;
     margin-top: 5px;
@@ -94,7 +98,10 @@ select.form-control {
       width:100% !important;
     }
     
-
+    // :host(a.pimg img) ::ng-deep .mixers {
+    //   height: auto !important;
+    //   max-width: 46% !important;
+    // }
 
 }
 
@@ -379,3 +386,5 @@ h4.left-panel-title a.bottles-brand {
   margin-bottom: 0px !important;
 }
 .mbottom15{ margin-bottom: 15px;}
+
+/* iPad in landscape */

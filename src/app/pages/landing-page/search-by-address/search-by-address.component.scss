@@ -21,19 +21,19 @@ span{ font-size: 0.25em !important;
     font-size: 0.9em;
   }
   .control-section{ 
-    width: 73%; margin-left: 386px;
+    width: 60%; margin-left: 357px;
     z-index: 99999;}
-    h4{ color: #fff; white-space: nowrap; text-transform: uppercase;  font-family: 'CubanoRegular'; font-weight: 100; font-size: 1.3em; background: #e91d24; width: 40% !important; padding:10px 15px; margin-bottom: 0px;}
+    h4{ display:inline-block; color: #fff; white-space: nowrap; text-transform: uppercase;  font-family: 'CubanoRegular'; font-weight: 100; font-size: 1.3em; background: #e91d24; padding:9px 15px; margin-bottom: 0px;}
     .e-input-group{width: 100%;
         background: #fff;
         border: solid 5px #e91d24 !important; padding-left:5px; height: 45px;}
-    h3{color: #fff; text-transform: uppercase; font-size: 1.5em;  margin-top: 10px;  font-family: 'CubanoRegular';}
+    h3{color: #fff; text-transform: uppercase; font-size: 1.2em;  margin-top: 10px;  font-family: 'CubanoRegular';}
     .pac-container{ z-index: 99999 !important;}
     .search-icon {
       position: absolute;
-      
       left: 25px;
-      margin-top: 6px;
+      margin-top: 58px;
+      display: inline-flex;
   }
   .search-icon::before{top: 55% !important;}
   .search-icon::after{top: 1.5% !important;}
@@ -184,11 +184,13 @@ and (max-device-width : 736px) {
 and (min-device-width : 414px) 
 and (max-device-width : 736px) 
 and (orientation : landscape) {
-h4{ width: 38% !important;}
+//h4{ width: 38% !important;}
+.search-icon{ margin-top: 57px;}
 .control-section{ }
 .hero-text{ font-size:7.4em !important; margin-top: 6px;
   span{ font-size: 0.25em; }
   }
+  .hero-text{ margin-top: 45px !important;}
 }
 
 /* iPhone 6 Plus in portrait */
@@ -196,8 +198,8 @@ h4{ width: 38% !important;}
 and (min-device-width : 414px) 
 and (max-device-width : 736px) 
 and (orientation : portrait) {
-  h4{ width:37% !important;}
-
+ // h4{ width:37% !important;}
+ .search-icon{ margin-top: 60px;}
 }
 
 /* iPhone 5 & 5S in portrait & landscape */
@@ -207,6 +209,7 @@ and (max-device-width : 568px) {
   .control-section{ margin-left: 15px;}
   .hero-text{ font-size:4em !important; 
     span{ font-size: 0.32em !important;}
+    .search-icon { margin-top: 50px !important;}
     }
     .header, .banner{ height: 450px !important;}
 }
@@ -227,9 +230,10 @@ and (min-device-width : 320px)
 and (max-device-width : 568px) 
 and (orientation : portrait) {
   .control-section{width:92%; }
-  h4{ width:67% !important; font-size: 1em;}
+  h4{ font-size: 1em;}
   .hero-text{ font-size:4em !important; margin-top: 35px !important; }
   .banner{ top:-31px;}
+  .search-icon { margin-top: 54px !important;}
 }
 
 /* 
@@ -265,7 +269,7 @@ and (orientation : portrait) {
 and (min-device-width : 768px) 
 and (max-device-width : 1024px)  {
   
-  h4{ width:45% !important; font-size: 1em;}
+  h4{ font-size: 1em;}
 }
 
 /* iPad in landscape */
@@ -273,9 +277,10 @@ and (max-device-width : 1024px)  {
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) 
 and (orientation : landscape) {
-  .control-section{ margin-left: 136px !important;}
+  .control-section{ margin-left: 136px !important; width: 85% !important;}
   .hero-text{ font-size:10em !important; margin-top: 48px; }
   .banner{ top:-49px;}
+  .search-icon{ margin-top: 54px !important;}
 }
 
 /* iPad in portrait */
@@ -288,6 +293,7 @@ and (orientation : portrait) {
     span{ font-size: 0.25em !important;}
     }
     .header, .banner{ height: 450px !important;}
+    .search-icon{ margin-top: 60px;}
 }
 
 /* Galaxy S3 portrait and landscape */
@@ -375,11 +381,12 @@ and (orientation : portrait) {
   and (-webkit-device-pixel-ratio: 3) {
     .control-section{ width:92%;}
   h4{ width:60% !important; font-size: 1em;}
-  .search-icon{ top:36px;}
+  //.search-icon{ top:36px;}
   .header, .banner{ height: 450px !important; margin-top: 15px;}
   .hero-text{ font-size:3.5em !important; 
     span{ font-size: 0.25em;}
     }
+    
 }
 
 /* HTC One portrait */
@@ -391,6 +398,7 @@ and (orientation : portrait) {
    // .control-section{top:60% !important;}
    .hero-text{ margin-top: 30px;}
    .banner{ top:-46px;}
+   .search-icon{ margin-top: 53px !important;}
 }
 
 /* HTC One landscape */
@@ -598,3 +606,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
       span{ font-size: 0.25em;}
       }
    }
+   @media only screen and (min-width: 823px) and (orientation: landscape) {
+    //.search-icon{ margin-top: 61px !important;}
+     }
