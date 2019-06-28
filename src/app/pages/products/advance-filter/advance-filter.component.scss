@@ -387,4 +387,11 @@ h4.left-panel-title a.bottles-brand {
 }
 .mbottom15{ margin-bottom: 15px;}
 
-/* iPad in landscape */
+/* iPhone X in portrait */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px) 
+and (-webkit-device-pixel-ratio : 3)
+and (orientation : portrait) {
+  .mbottom15{ margin-bottom: 30px; float: left !important;}
+}
