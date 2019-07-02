@@ -26,7 +26,7 @@ export class SorryPageComponent implements OnChanges {
     this.formContactUs = this.formBuilder.group({
       storeName: ['', [Validators.required, Validators.maxLength(40)]],
       location: ['', [Validators.required]],
-      phone: ['', []],
+      phone: ['', [Validators.required]],
     });
   }
 

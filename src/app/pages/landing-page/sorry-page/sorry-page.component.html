@@ -26,8 +26,11 @@
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" placeholder="Phone Number(Not Required)" formControlName="phone" appPhoneMask
+                <input type="text" placeholder="Phone Number" formControlName="phone" appPhoneMask
                   class="form-control input-md" id="phone-number">
+                  <div *ngIf="submitted && f.phone.errors" class="alert alert-danger">
+                    <div *ngIf="f.phone.errors.required">Phone Number is required.</div>
+                  </div>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-brand contact">Submit</button>
