@@ -137,8 +137,9 @@ i.active {
   }
   .second_content {
     height: 70% !important;
-    float: left;
+    //float: left;
     margin-bottom: 10px;
+    display: block;
   }
   .img_div {
     margin-bottom: 0px !important;

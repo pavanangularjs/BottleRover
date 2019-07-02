@@ -290,7 +290,9 @@ table tr td .img_div{
     border-radius: 0 0 5px 5px;
     cursor: pointer;
     position: relative;
-    float: none !important;
+    float: left !important;
+    display: block;
+    width: 100%;
 }
 .second_content p.product_size{
     /* border-bottom: 1px solid #ddd;
@@ -1100,7 +1102,10 @@ ul.navbar-nav li a:hover {
         overflow: hidden;
         font-size: 0.8em !important;
     }
-    .Main_bottlesection{ margin-bottom: 15px !important; display: flow-root;}
+    .Main_bottlesection{ margin-bottom: 15px !important; 
+        //display: inline-block !important;
+    //float: left !important;
+    }
     .producttitle{
         height: 33px;
         overflow: hidden;
